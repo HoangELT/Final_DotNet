@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\DotNet_BT\\Final_DotNet1\\Final_DotNet\\Final_DotNet.csproj": {}
+    "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\Final_DotNet.csproj": {}
   },
   "projects": {
-    "G:\\DotNet_BT\\Final_DotNet1\\Final_DotNet\\Final_DotNet.csproj": {
+    "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\Final_DotNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\DotNet_BT\\Final_DotNet1\\Final_DotNet\\Final_DotNet.csproj",
+        "projectUniqueName": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\Final_DotNet.csproj",
         "projectName": "Final_DotNet",
-        "projectPath": "G:\\DotNet_BT\\Final_DotNet1\\Final_DotNet\\Final_DotNet.csproj",
+        "projectPath": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\Final_DotNet.csproj",
         "packagesPath": "C:\\Users\\DKT00398\\.nuget\\packages\\",
-        "outputPath": "G:\\DotNet_BT\\Final_DotNet1\\Final_DotNet\\obj\\",
+        "outputPath": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DKT00398\\AppData\\Roaming\\NuGet\\NuGet.Config",
