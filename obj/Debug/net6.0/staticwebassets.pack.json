@@ -265,6 +265,14 @@
       "PackagePath": "staticwebassets\\templates\\css\\bootstrap.min.css"
     },
     {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\login\\style_login.css",
+      "PackagePath": "staticwebassets\\templates\\css\\login\\style_login.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\register\\style_register.css",
+      "PackagePath": "staticwebassets\\templates\\css\\register\\style_register.css"
+    },
+    {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\style.css",
       "PackagePath": "staticwebassets\\templates\\css\\style.css"
     },

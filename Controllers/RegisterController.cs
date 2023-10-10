@@ -2,7 +2,7 @@
 
 namespace Final_DotNet.Controllers
 {
-    public class LoginController : Controller
+    public class RegisterController : Controller
     {
         public IActionResult Index()
         {

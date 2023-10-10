@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UUI2iAqy8U7UqJBtN75P17L56uYB8RS4Y5Sr6mXRKn8=",
+  "Hash": "ruF6qZpgpJfSAQp9P8iIae9Ujj15XvYlQaIMsGdank8=",
   "Source": "Final_DotNet",
   "BasePath": "_content/Final_DotNet",
   "Mode": "Default",
@@ -1137,6 +1137,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\templates\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Identity": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\login\\style_login.css",
+      "SourceId": "Final_DotNet",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\",
+      "BasePath": "_content/Final_DotNet",
+      "RelativePath": "templates/css/login/style_login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\templates\\css\\login\\style_login.css"
+    },
+    {
+      "Identity": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\register\\style_register.css",
+      "SourceId": "Final_DotNet",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\",
+      "BasePath": "_content/Final_DotNet",
+      "RelativePath": "templates/css/register/style_register.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\templates\\css\\register\\style_register.css"
     },
     {
       "Identity": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\style.css",
