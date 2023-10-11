@@ -1,0 +1,60 @@
+﻿@{
+    var page = ""; /* System.IO.Path.GetFileName(Request.Path); */
+}
+
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+    <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;"><p><b>Quản lý</b></p></a></li>
+                <li class="breadcrumb-item text-sm text-dark active" aria-current="page">
+                    @if (page == "index.cshtml")
+                    {
+                        <text> </text>
+                    }
+                    else if (page == "category.cshtml")
+                    {
+                        <text>Tất cả danh mục</text>
+                    }
+                    else if (page == "add-category.cshtml")
+                    {
+                        <text>Thêm danh mục</text>
+                    }
+                    else if (page == "products.cshtml")
+                    {
+                        <text>Tất cả sản phẩm</text>
+                    }
+                    else if (page == "add-product.cshtml")
+                    {
+                        <text>Thêm sản phẩm</text>
+                    }
+                    else if (page == "user.cshtml")
+                    {
+                        <text>Quản lý tài khoản</text>
+                    }
+                    else if (page == "order.cshtml")
+                    {
+                        <text>Quản lý đơn hàng</text>
+                    }
+                    else if (page == "order-detail.cshtml")
+                    {
+                        <text>Quản lý đơn hàng / order-detail</text>
+                    }
+                    else if (page == "add-blog.cshtml")
+                    {
+                        <text>Thêm tin tức</text>
+                    }
+                    else if (page == "blog.cshtml")
+                    {
+                        <text>Tất cả tin tức</text>
+                    }
+                </li>
+            </ol>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+            </div>
+        </div>
+    </div>
+</nav>
+

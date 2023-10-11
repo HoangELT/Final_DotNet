@@ -1,8 +1,8 @@
-﻿namespace Electric_Store.Models
+﻿namespace Final_DotNet.Models
 {
     public class Order
     {
         public int Id { get; set; }
-        public User? user { get; set; }
+        public User User { get; set; }
     }
 }

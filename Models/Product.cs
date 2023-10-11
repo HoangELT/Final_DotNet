@@ -1,4 +1,4 @@
-﻿namespace Electric_Store.Models
+﻿namespace Final_DotNet.Models
 {
     public class Product
     {
@@ -8,6 +8,7 @@
         public double Price { get; set; }
         public string? Color { get; set; }
         public string? Brand { get; set; }
-        public Category? category { get; set; }
+        public Category Category { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; }
     }
 }

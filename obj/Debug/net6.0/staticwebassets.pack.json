@@ -241,6 +241,38 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\css\\form.css",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\css\\form.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\css\\material-dashboard.min.css",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\css\\material-dashboard.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\StringConvertToSlug.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\StringConvertToSlug.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\jquery-3.6.0.min.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\jquery-3.6.0.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\perfect-scrollbar.min.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\perfect-scrollbar.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\smooth-scrollbar.min.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\smooth-scrollbar.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\tinymce.min.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\tinymce.min.js"
+    },
+    {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\templates\\css\\bootstrap-grid.css"
     },

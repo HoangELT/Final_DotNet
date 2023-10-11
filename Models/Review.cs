@@ -1,4 +1,4 @@
-﻿namespace Electric_Store.Models
+﻿namespace Final_DotNet.Models
 {
     public class Review
     {

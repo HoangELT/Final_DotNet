@@ -1,8 +1,11 @@
-﻿namespace Electric_Store.Models
+﻿namespace Final_DotNet.Models
 {
     public class Role
     {
         public int Id { get; set; }
-        public string? Name { get; set; }
+        public string Name { get; set; }
+
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }
