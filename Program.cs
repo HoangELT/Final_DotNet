@@ -1,3 +1,6 @@
+using Final_DotNet.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace Final_DotNet
 {
 	public class Program
@@ -8,8 +11,12 @@ namespace Final_DotNet
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<StoreDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("StoreDbContext"));
+            });
 
-			var app = builder.Build();
+            var app = builder.Build();
 
 			// Configure the HTTP request pipeline.
 			if (!app.Environment.IsDevelopment())
