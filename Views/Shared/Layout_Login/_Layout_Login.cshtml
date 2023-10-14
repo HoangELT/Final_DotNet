@@ -5,12 +5,21 @@
     <title> @ViewData["Title"] - ELECTRIC STORE</title>
     <link href="../templates/css/login/style_login.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
 </head>
 <body>
+@*     <!--Start hide notification-->
+    @if (TempData["Register"] != null)
+    {
+        <div id="notification" style="display:none;">
+            
+        </div>
+    } *@
+    
     <div class="container">
         <div class="title">LOGIN</div>
         <div class="content">
-            <form action="/Login/Index" method="post">
+            <form action="/Login/Index" method="post" id="login-account">
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Username</span>
@@ -30,5 +39,12 @@
         </div>
     </div>
     @RenderBody()
+@*     <script>
+        document.getElementById("login-account").addEventListener('submit', function (e) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.success('Đăng ký thành công!');
+        })
+    </script> *@
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 </body>
 </html>

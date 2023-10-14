@@ -1,6 +1,6 @@
 ﻿using Final_DotNet.Models;
 
-namespace Final_DotNet.Repository
+namespace Final_DotNet.Repositories
 {
     public interface IUserRepository
     {
