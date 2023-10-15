@@ -1,4 +1,4 @@
-﻿namespace Final_DotNet.Repositories
+﻿namespace Final_DotNet.Interfaces
 {
     public interface IProductRepository
     {

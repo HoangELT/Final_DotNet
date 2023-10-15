@@ -1,14 +1,15 @@
 ﻿using Final_DotNet.Models;
 using Microsoft.AspNetCore.Mvc;
+using Final_DotNet.Interfaces;
 
 namespace Final_DotNet.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly StoreDbContext db;
-        public LoginController(StoreDbContext dbcontext)
+        private readonly IUserRepository IuserRepo;
+        public LoginController(IUserRepository IuserRepository)
         {
-            db = dbcontext;
+            IuserRepo = IuserRepository;
         }
         public IActionResult Index()
         {
@@ -17,16 +18,11 @@ namespace Final_DotNet.Controllers
         [HttpPost]
         public IActionResult Index(IFormCollection form)
         {
-            string username = form["username"];
-            string password = form["password"];
-            User user = db.Users.FirstOrDefault(u => u.UserName.Equals(username.Trim()));
-            if(user != null)
+            User? user = IuserRepo.Login(form["username"], form["password"]);
+            if (user != null)
             {
-                if (user.Password.Equals(password.Trim()))
-                {
-                    HttpContext.Session.SetInt32("UserLogin",user.Id);
-                    return RedirectToAction("Index", "Home");
-                }
+                HttpContext.Session.SetInt32("UserLogin", user.Id);
+                return RedirectToAction("Index", "Home");
             }
             return View();
         }

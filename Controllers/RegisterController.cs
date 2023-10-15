@@ -1,13 +1,14 @@
 ﻿using Final_DotNet.Models;
 using Microsoft.AspNetCore.Mvc;
+using Final_DotNet.Interfaces;
 
 namespace Final_DotNet.Controllers
 {
     public class RegisterController : Controller
     {
-        private readonly StoreDbContext db;
-        public RegisterController(StoreDbContext dbcontext) {
-            db = dbcontext;
+        private readonly IUserRepository IuserRepo;
+        public RegisterController(IUserRepository IuserRepository) {
+            IuserRepo = IuserRepository;
         }
         public IActionResult Index()
         {
@@ -16,31 +17,20 @@ namespace Final_DotNet.Controllers
         [HttpPost]
         public IActionResult Index(IFormCollection form)
         {
-            string? fullname = form["fullname"];
-            string? username = form["username"];
-            string? password = form["password"];
-            string? address = form["address"];
-            string? email = form["email"];
-            string? phone = form["phone"];
-            int isUser = db.Users.Count(u => u.Email.Equals(email) || u.UserName.Equals(username) || u.PhoneNumber.Equals(phone));
-            if(isUser == 0)
+            User user = new User();
+            user.FullName = form["fullname"];
+            user.UserName = form["username"];
+            user.Password = form["password"];
+            user.Address = form["address"];
+            user.Email = form["email"];
+            user.PhoneNumber = form["phone"];
+            bool checkUser = IuserRepo.Register(user);
+            if (checkUser)
             {
-                User user = new User();
-                user.FullName = fullname;
-                user.UserName = username;
-                user.Password = password;
-                user.Address = address;
-                user.Email = email;
-                user.PhoneNumber = phone;
-                db.Users.Add(user);
-                db.SaveChanges();
                 TempData["Register"] = true;
                 return RedirectToAction("Index", "Login");
             }
-            else
-            {
-                return View();
-            }
+            return View();
         }
     }
 }

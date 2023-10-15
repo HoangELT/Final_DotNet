@@ -1,4 +1,6 @@
+using Final_DotNet.Interfaces;
 using Final_DotNet.Models;
+using Final_DotNet.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Final_DotNet
@@ -11,7 +13,9 @@ namespace Final_DotNet
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
-			builder.Services.AddSession();
+			builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddSession();
             builder.Services.AddDbContext<StoreDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("StoreDbContext"));
