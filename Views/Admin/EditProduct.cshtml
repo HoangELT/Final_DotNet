@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Views/Shared/Layout_Admin/_Layout_Admin.cshtml";
+    var categories = ViewBag.Categories as List<Category>;
+    var listcolors = ViewBag.ColorOfproduct as List<Color>;
+    var colors = ViewBag.ListColors as List<Color>;
+    var brands = ViewBag.Brands as List<Brand>;
+}
+@model Product
+@if (Model != null && categories != null)
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>EDIT PRODUCT<a href="/Admin/AllProducts" class="btn btn-primary float-end ">BACK</a></h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/Admin/EditProduct" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="mb-0"><b>Choose Category</b></label>
+                                    <select name="category_id" class="form-select mb-2">
+                                        <option>Choose Category</option>
+                                        @foreach (var i in categories)
+                                        {
+                                            if (i.CategoryId == Model.CategoryId)
+                                            {
+                                                <option value="@i.CategoryId" selected>@i.Name</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@i.CategoryId">@i.Name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="hidden" name="product_id" value="@Model.ProductId">
+                                    <br>
+                                    <label class="mb-0"><b>Product Name</b></label>
+                                    <input type="text" id="full-name" required name="name" value="@Model.Name" placeholder="Please enter product name" class="form-control mb-2 ">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="mb-0"><b>Choose Brand</b></label>
+                                    <select name="brand_id" class="form-select mb-2">
+                                        <option>Choose Brand</option>
+                                        @if (brands != null)
+                                        {
+                                            @foreach (var i in brands)
+                                            {
+                                                if (i.BrandId == Model.BrandId)
+                                                {
+                                                    <option value="@i.BrandId" selected>@i.Name</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@i.BrandId">@i.Name</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <br>
+                                    <label class="mb-0"><b>Small Description</b></label>
+                                    <textarea type="text" required name="small_description" placeholder="Please enter small description product" class="form-control mb-2">@Model.SmallDescription</textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <br>
+                                    <label class="mb-0"><b>Description</b></label>
+                                    <textarea type="text" required name="description" placeholder="Please enter description product" class="form-control mb-2">@Model.Description</textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="mb-0"><b>Choose Colors</b></label>
+                                    <select name="colors" class="form-select mb-2" multiple>
+                                        @if (listcolors != null && colors != null)
+                                        {
+                                            @foreach (var i in colors)
+                                            {
+                                                // Kiểm tra xem i.ColorId có trong danh sách listcolors hay không
+                                                var isInListColors = listcolors.Any(j => j.ColorId == i.ColorId);
+
+                                                // Nếu có trong listcolors, đánh dấu là "selected" và thêm vào danh sách đã chọn
+                                                if (isInListColors)
+                                                {
+                                                    <option value="@i.ColorId" selected>@i.Name</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@i.ColorId">@i.Name</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <label class="mb-0"><b>Original Price</b></label>
+                                    <input type="text" required name="original_price" value="@Model.DisPrice" placeholder="Please enter original price" class="form-control mb-2">
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <label class="mb-0"><b>Selling Price</b></label>
+                                    <input type="text" required name="selling_price" value="@Model.CurPrice" placeholder="Please enter selling price" class="form-control mb-2">
+                                </div>
+                                <div class="col-md-12">
+                                    <br>
+                                    <label class="mb-0"><b>Image</b></label>
+                                    <input type="file" name="image" class="form-control mb-2">
+                                    <label for="">Current Image </label>
+                                    <input type="hidden" name="old_image" value="@Model.ImageUrl">
+                                    <img src="../templates/img/imgProduct/@Model.ImageUrl" height="50px" width="50px" alt="Image product">
+                                </div>
+                                <div class="col-md-12">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary" name="update_product_btn">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

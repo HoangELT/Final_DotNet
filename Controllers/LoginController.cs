@@ -1,6 +1,6 @@
 ﻿using Final_DotNet.Models;
 using Microsoft.AspNetCore.Mvc;
-using Final_DotNet.Interfaces;
+using Final_DotNet.Repository;
 
 namespace Final_DotNet.Controllers
 {
@@ -21,7 +21,7 @@ namespace Final_DotNet.Controllers
             User? user = IuserRepo.Login(form["username"], form["password"]);
             if (user != null)
             {
-                HttpContext.Session.SetInt32("UserLogin", user.Id);
+                HttpContext.Session.SetInt32("UserLogin", user.UserId);
                 return RedirectToAction("Index", "Home");
             }
             return View();

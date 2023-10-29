@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Views/Shared/Layout_Admin/_Layout_Admin.cshtml";
+}
+@model Category
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>EDIT CATEGORY<a href="/Admin/AllCategories" class="btn btn-primary float-end ">BACK</a></h4>
+                </div>
+                <div class="card-body">
+                    <form action="/Admin/EditCategory" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="hidden" name="categoryId" value="@Model.CategoryId">
+                                <label for=""><b>Category Name</b></label>
+                                <input type="text" id="full-name" required value="@Model.Name" name="name" placeholder="Please enter category name" class="form-control">
+                            </div>
+                            <div class="col-md-12">
+                                <br>
+                                <label for=""><b>Description</b></label>
+                                <input type="text" required value="@Model.Description" name="description" placeholder="Please enter description category" class="form-control">
+                            </div>
+                            <div class="col-md-12">
+                                <br>
+                                <button type="submit" class="btn btn-primary" name="update_category_btn">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

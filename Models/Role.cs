@@ -1,11 +1,14 @@
-﻿namespace Final_DotNet.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Final_DotNet.Models
 {
     public class Role
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-
-        public int UserId { get; set; }
-        public User User { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string Name { get; set; } = string.Empty;
+        public ICollection<UserRole> Users { get; set; } = new HashSet<UserRole>();
     }
 }

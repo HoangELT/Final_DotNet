@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Views/Shared/Layout_Admin/_Layout_Admin.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>ALL OF BLOGS</h4>
+                </div>
+                <div class="card-body" style="text-align:center;">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Image</th>
+                                <th>Create At</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <img src="../templates/img/imgBlog/" width="100px" height="50px" alt="">
+                                <td>
+                                    @Convert.ToDateTime("").ToString("dd/MM/yyyy")
+                                </td>
+                                <td>
+                                    <a href="/Admin/EditBlog?id" class="btn btn-primary">Edit</a>
+                                </td>
+                                <td>
+                                    <form action="/Admin/DeleteBlog?id" method="POST">
+                                        <input type="hidden" name="blog_id" value="<?= $item['id']; ?>">
+                                        <button type="submit" name="delete_blog_btn" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

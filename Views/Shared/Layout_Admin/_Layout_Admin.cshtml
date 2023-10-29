@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var scriptName = Context.Request.Path.ToString();
+    var lastSegment = scriptName.Substring(scriptName.LastIndexOf("/") + 1);
+    var page = lastSegment;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -24,89 +29,121 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="#" target="_blank">
-                <span class="ms-1 font-weight-bold text-white">QUẢN LÝ DARKDO STORE</span>
+                <span class="ms-1 font-weight-bold text-white">ELECTRIC STORE</span>
             </a>
         </div>
         <hr class="horizontal light mt-0 mb-2">
         <div class="collapse navbar-collapse  w-auto" id="sidenav-collapse-main" style="height: 75vh">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white active bg-gradient-primary" href="/Admin/Index">
+                    <a class="nav-link text-white @(page == "Index" ? "active bg-gradient-primary" : "")" href="/Admin/Index">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">dashboard</i>
                         </div>
-                        <span class="nav-link-text ms-1">Quản lý</span>
+                        <span class="nav-link-text ms-1">MANAGERMENTS</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="/Admin/User">
+                    <a class="nav-link text-white @(page == "AllUser" ? "active bg-gradient-primary" : "")" href="/Admin/AllUser">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">person</i>
                         </div>
-                        <span class="nav-link-text ms-1">Quản lý khách hàng</span>
+                        <span class="nav-link-text ms-1">MANAGERMENT USERS</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="/Admin/Order">
+                    <a class="nav-link text-white @(page == "AllOrders" ? "active bg-gradient-primary" : "")" href="/Admin/AllOrders">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">weekend</i>
                         </div>
-                        <span class="nav-link-text ms-1">Quản lý đơn hàng</span>
+                        <span class="nav-link-text ms-1">MANAGERMENT ORDERS</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="/Admin/Category">
+                    <a class="nav-link text-white @(page == "AllCategories" ? "active bg-gradient-primary" : "")" href="/Admin/AllCategories">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">table_view</i>
                         </div>
-                        <span class="nav-link-text ms-1">Tất cả danh mục sản phẩm</span>
+                        <span class="nav-link-text ms-1">ALL OF CATEGORIES</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="/Admin/Add-Category">
+                    <a class="nav-link text-white @(page == "AddCategory" ? "active bg-gradient-primary" : "")" href="/Admin/AddCategory">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">table_view</i>
+                            <i class="material-icons opacity-10">add_to_photos</i>
                         </div>
-                        <span class="nav-link-text ms-1">Thêm danh mục sản phẩm</span>
+                        <span class="nav-link-text ms-1">ADD NEW CATEGORY</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="/Admin/Products">
+                    <a class="nav-link text-white @(page == "AllBrands" ? "active bg-gradient-primary" : "")" href="/Admin/AllBrands">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">table_view</i>
+                            <i class="material-icons opacity-10">apps</i>
                         </div>
-                        <span class="nav-link-text ms-1">Tất cả sản phẩm</span>
+                        <span class="nav-link-text ms-1">ALL OF BRANDS</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="/Admin/Add-Product">
+                    <a class="nav-link text-white @(page == "AddBrand" ? "active bg-gradient-primary" : "")" href="/Admin/AddBrand">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">table_view</i>
+                            <i class="material-icons opacity-10">add_to_photos</i>
                         </div>
-                        <span class="nav-link-text ms-1">Thêm sản phẩm</span>
+                        <span class="nav-link-text ms-1">ADD NEW BRAND</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="/Admin/Add-Blog">
+                    <a class="nav-link text-white @(page == "AllColors" ? "active bg-gradient-primary" : "")" href="/Admin/AllColors">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">edit</i>
+                            <i class="material-icons opacity-10">color_lens</i>
                         </div>
-                        <span class="nav-link-text ms-1">Thêm tin tức</span>
+                        <span class="nav-link-text ms-1">ALL OF COLORS</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="/Admin/Blog">
+                    <a class="nav-link text-white @(page == "AddColor" ? "active bg-gradient-primary" : "")" href="/Admin/AddColor">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">add_to_photos</i>
+                        </div>
+                        <span class="nav-link-text ms-1">ADD NEW COLOR</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white @(page == "AllProducts" ? "active bg-gradient-primary" : "")" href="/Admin/AllProducts">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">view_list</i>
+                        </div>
+                        <span class="nav-link-text ms-1">ALL OF PRODUCTS</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white @(page == "AddProduct" ? "active bg-gradient-primary" : "")" href="/Admin/AddProduct">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">add_to_photos</i>
+                        </div>
+                        <span class="nav-link-text ms-1">ADD NEW PRODUCT</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white @(page == "AllBlogs" ? "active bg-gradient-primary" : "")" href="/Admin/AllBlogs">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">receipt_long</i>
                         </div>
-                        <span class="nav-link-text ms-1">Tất cả tin tức</span>
+                        <span class="nav-link-text ms-1">ALL OF BLOGS</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white @(page == "AddBlog" ? "active bg-gradient-primary" : "")" href="/Admin/AddBlog">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">edit</i>
+                        </div>
+                        <span class="nav-link-text ms-1">ADD NEW BLOG</span>
                     </a>
                 </li>
             </ul>
         </div>
         <div class="sidenav-footer position-absolute w-100 bottom-0 ">
             <div class="mx-3">
-                <a class="btn bg-gradient-primary mt-4 w-100" href="/Logout/Index" type="button">Đăng xuất</a>
+                <a class="btn bg-gradient-primary mt-4 w-100" href="/Login/Index" type="button">LOGOUT</a>
             </div>
         </div>
     </aside>
@@ -115,8 +152,64 @@
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;"><p><b>Quản lý</b></p></a></li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;"><p><b>MANAGERMENTS</b></p></a></li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">
+                            @if (page == "Index")
+                            {
+                                <text> </text>
+                            }
+                            else if (page == "AllCategories")
+                            {
+                                <text>ALL OF CATEGORIES</text>
+                            }
+                            else if (page == "AddCategory")
+                            {
+                                <text>ADD NEW CATEGORY</text>
+                            }
+                            else if (page == "AllProducts")
+                            {
+                                <text>ALL OF PRODUCTS</text>
+                            }
+                            else if (page == "AddProduct")
+                            {
+                                <text>ADD NEW PRODUCT</text>
+                            }
+                            else if (page == "AllUser")
+                            {
+                                <text>MANAGERMENT USERS ACCOUNT</text>
+                            }
+                            else if (page == "AllOrders")
+                            {
+                                <text>MANAGERMENT ORDERS</text>
+                            }
+                            else if (page == "OrderDetail")
+                            {
+                                <text>MANAGERMENT ORDERS/ ORDER-DETAIL</text>
+                            }
+                            else if (page == "AddBlog")
+                            {
+                                <text>ADD NEW BLOG</text>
+                            }
+                            else if (page == "AllBlogs")
+                            {
+                                <text>ALL OF BLOGS</text>
+                            }
+                            else if (page == "AddBrand")
+                            {
+                                <text>ADD NEW BRAND</text>
+                            }
+                            else if (page == "AllBrands")
+                            {
+                                <text>ALL OF BRANDS</text>
+                            }
+                            else if (page == "AddColor")
+                            {
+                                <text>ADD NEW COLOR</text>
+                            }
+                            else if (page == "AllColors")
+                            {
+                                <text>ALL OF COLORS</text>
+                            }
                         </li>
                     </ol>
                 </nav>
@@ -131,92 +224,20 @@
                 <div class="col-12">
                 </div>
             </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <br>
-                <br>
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                        <div class="card">
-                            <div class="card-header p-3 pt-2">
-                                <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                                    <i class="material-icons opacity-10">person</i>
-                                </div>
-                                <div class="text-end pt-1">
-                                    <p class="text-sm mb-0 text-capitalize">Tài khoản khách hàng</p>
-                                    <h4 class="mb-0">14</h4>
-                                </div>
-                            </div>
-                            <hr class="dark horizontal my-0">
-                            <div class="card-footer p-3">
-                                <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+10% </span>so với tháng trước</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                        <div class="card">
-                            <div class="card-header p-3 pt-2">
-                                <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
-                                    <i class="material-icons opacity-10">table_view</i>
-                                </div>
-                                <div class="text-end pt-1">
-                                    <p class="text-sm mb-0 text-capitalize">Tổng sản phẩm</p>
-                                    <h4 class="mb-0">23</h4>
-                                </div>
-                            </div>
-                            <hr class="dark horizontal my-0">
-                            <div class="card-footer p-3">
-                                <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+30% </span>so với tuần trước</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                        <div class="card">
-                            <div class="card-header p-3 pt-2">
-                                <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                                    <i class="material-icons opacity-10">receipt_long</i>
-                                </div>
-                                <div class="text-end pt-1">
-                                    <p class="text-sm mb-0 text-capitalize">Tổng đơn hàng</p>
-                                    <h4 class="mb-0">15</h4>
-                                </div>
-                            </div>
-                            <hr class="dark horizontal my-0">
-                            <div class="card-footer p-3">
-                                <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-5%</span> so với hôm qua</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6">
-                        <div class="card">
-                            <div class="card-header p-3 pt-2">
-                                <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-                                    <i class="material-icons opacity-10">weekend</i>
-                                </div>
-                                <div class="text-end pt-1">
-                                    <p class="text-sm mb-0 text-capitalize">Doanh thu</p>
-                                    <h4 class="mb-0">2056000 VNĐ</h4>
-                                </div>
-                            </div>
-                            <hr class="dark horizontal my-0">
-                            <div class="card-footer p-3">
-                                <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>so với hôm qua</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</main>
     @RenderBody()
-    <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/perfect-scrollbar.min.js"></script>
-    <script src="/assets/js/smooth-scrollbar.min.js"></script>
+            <script src="../templates/admin/assets/js/jquery-3.6.0.min.js"></script>
+            <script src="../templates/admin/assets/js/bootstrap.bundle.min.js"></script>
+            <script src="../templates/admin/assets/js/perfect-scrollbar.min.js"></script>
+            <script src="../templates/admin/assets/js/smooth-scrollbar.min.js"></script>
     <!-- Alertify JS -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+            <script type="text/javascript" src="../templates/admin/assets/js/StringConvertToSlug.js"></script>
+        @*     <script>
+                tinymce.init({
+                    selector: "#myTextarea",
+                });
+            </script> *@
+    </div>
+    </main>
 </body>
 </html>

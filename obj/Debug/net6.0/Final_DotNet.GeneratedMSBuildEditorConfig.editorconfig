@@ -16,12 +16,84 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = G:\DotNet_BT\Final_DotNet\Final_DotNet
 build_property._RazorSourceGeneratorDebug = 
 
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AddBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AddBrand.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQnJhbmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AddCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AddColor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ29sb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AllBlogs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsQmxvZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AllBrands.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsQnJhbmRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AllCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsQ2F0ZWdvcmllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AllColors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsQ29sb3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AllOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AllProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsUHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/AllUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/EditBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/EditBrand.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEJyYW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/EditCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdENhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/EditColor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdENvbG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/EditProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Cart/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Admin/OrderDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3JkZXJEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Cart/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Home/Index.cshtml]
@@ -36,12 +108,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Logout/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nb3V0XEluZGV4LmNzaHRtbA==
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Product/AllProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBbGxQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Product/ProductDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0RGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Product/ResultFilter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxSZXN1bHRGaWx0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Register/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Shared/Components/Navbar/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmF2YmFyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Shared/Error.cshtml]
@@ -50,14 +134,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Shared/Layout_Admin/_Layout_Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dF9BZG1pblxfTGF5b3V0X0FkbWluLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Shared/Layout_Admin/_Layout_Navbar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dF9BZG1pblxfTGF5b3V0X05hdmJhci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Shared/Layout_Admin/_Layout_Sidebar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dF9BZG1pblxfTGF5b3V0X1NpZGViYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/DotNet_BT/Final_DotNet/Final_DotNet/Views/Shared/Layout_Index/_Layout_Index.cshtml]

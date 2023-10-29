@@ -1,33 +1,53 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Final_DotNet.Models
 {
     public class User
     {
-        public int Id { get; set; }
-        [NotNull]
-        [MaxLength(50)]
-        public string FullName { get; set; }
-        [NotNull]
-        [MaxLength(50)]
-        public string UserName { get; set; }
-        [NotNull]
-        [MaxLength(50)]
-        public string Password { get; set; }
-        [NotNull]
-        [MaxLength(50)]
-        public string Email { get; set; }
-        [NotNull]
-        [MaxLength(50)]
-        public string Address { get; set; }
-        [NotNull]
-        [MaxLength(50)]
-        public string PhoneNumber { get; set; }
+        [Key]
+        public int UserId { get; set; }
 
-        public List<Blog> Blogs { get; set;}
-        public Role Role { get; set; }
-        public List<Order> Orders {  get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string FullName { get; set; } = string.Empty;
+
+        [Required]
+        [MaxLength(50)]
+        public string UserName { get; set; } = string.Empty;
+
+        [Required]
+        [MaxLength(150)]
+        public string Password { get; set; } = string.Empty;
+
+        [Required]
+        [MaxLength(50)]
+        public string Email { get; set; } = string.Empty;
+
+        [Required]
+        [MaxLength(50)]
+        public string Address { get; set; } = string.Empty;
+
+        [Required]
+        [MaxLength(50)]
+        public string PhoneNumber { get; set; } = string.Empty;
+
+        [Required]
+        [MaxLength(6)]
+        public string Gender {  get; set; } = string.Empty;
+        [Required]
+        [MaxLength(100)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime DateCreate { get; set; } = DateTime.Now;
+
+
+        public ICollection<Blog> Blogs { get; set;} = new HashSet<Blog>();
+
+        public ICollection<UserRole> Roles { get; set; } = new HashSet<UserRole>();
+
+        public ICollection<Order> Orders {  get; set; } = new HashSet<Order>();
+
+        public ICollection<Review> ProductReviews { get; set; } = new HashSet<Review>();
     }
 }

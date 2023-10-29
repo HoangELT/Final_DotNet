@@ -341,6 +341,86 @@
       "PackagePath": "staticwebassets\\templates\\img\\cat-4.jpg"
     },
     {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\D3.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\D3.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\OIP.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\OIP.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\iphone-14-promax.jfif",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\iphone-14-promax.jfif"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\iphone-15-pro.jfif",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\iphone-15-pro.jfif"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\iphone-15.jfif",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\iphone-15.jfif"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\laptop-acer-aspire-7.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\laptop-acer-aspire-7.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\ne1.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\ne1.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\nên.png",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\nên.png"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-1.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-1.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-2.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-2.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-3.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-3.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-4.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-4.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-5.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-5.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-6.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-6.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-7.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-7.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-8.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-8.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-9.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-9.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\tai nghe.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\tai nghe.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\tv-samsung-qa85q70c.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\tv-samsung-qa85q70c.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgUser\\user.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\imgUser\\user.jpg"
+    },
+    {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\offer-1.jpg",
       "PackagePath": "staticwebassets\\templates\\img\\offer-1.jpg"
     },
@@ -351,46 +431,6 @@
     {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\payments.png",
       "PackagePath": "staticwebassets\\templates\\img\\payments.png"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\product-1.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\product-1.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\product-2.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\product-2.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\product-3.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\product-3.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\product-4.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\product-4.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\product-5.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\product-5.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\product-6.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\product-6.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\product-7.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\product-7.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\product-8.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\product-8.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\product-9.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\product-9.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\user.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\user.jpg"
     },
     {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\vendor-1.jpg",
@@ -483,6 +523,18 @@
     {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\owl.carousel.min.js",
       "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\mail\\contact.js",
+      "PackagePath": "staticwebassets\\templates\\mail\\contact.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\mail\\contact.php",
+      "PackagePath": "staticwebassets\\templates\\mail\\contact.php"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\mail\\jqBootstrapValidation.min.js",
+      "PackagePath": "staticwebassets\\templates\\mail\\jqBootstrapValidation.min.js"
     },
     {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_alert.scss",

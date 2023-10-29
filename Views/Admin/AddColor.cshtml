@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Views/Shared/Layout_Admin/_Layout_Admin.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>ADD NEW COLOR</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/Admin/AddColor" method="POST" enctype="multipart/form-data">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="hidden" name="brandId">
+                                <label for=""><b>Color Name</b></label>
+                                <input type="text" id="full-name" required name="color_name" placeholder="Please enter category name" class="form-control">
+                            </div>
+                            <div class="col-md-12">
+                                <br>
+                                <button type="submit" class="btn btn-primary" name="add_category_btn">ADD</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

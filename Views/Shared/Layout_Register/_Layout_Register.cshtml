@@ -34,6 +34,13 @@
                         <input type="text" name="address" placeholder="Enter your address" required>
                     </div>
                     <div class="input-box">
+                        <span class="details">Gender</span>
+                        <select name="gender" style="height: 45px;width: 100%;outline: none;font-size: 16px;border-radius: 5px;padding-left: 15px;border: 1px solid #ccc;border-bottom-width: 2px;" required>
+                             <option value="male">Nam</option>
+                             <option value="female">Nữ</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
                         <span class="details">Password</span>
                         <input type="password" id="InputPassword" name="password" placeholder="Enter your password" required>
                     </div>
@@ -44,6 +51,10 @@
                 </div>
                 <div class="button">
                     <input type="submit" value="REGISTER">
+                </div>
+                <div style="text-align:center">
+                    <span>Already have an account? </span> 
+                    <a href="/Login/Index">Login</a>
                 </div>
             </form>
        </div>

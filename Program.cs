@@ -1,11 +1,13 @@
-using Final_DotNet.Interfaces;
-using Final_DotNet.Models;
 using Final_DotNet.Repository;
+using Final_DotNet.Service;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Final_DotNet.Data;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Final_DotNet
 {
-	public class Program
+    public class Program
 	{
 		public static void Main(string[] args)
 		{
@@ -13,9 +15,20 @@ namespace Final_DotNet
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
-			builder.Services.AddScoped<IUserRepository, UserRepository>();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            builder.Services.AddSession();
+			builder.Services.AddScoped<IUserRepository, UserService>();
+            builder.Services.AddScoped<IProductRepository, ProductService>();
+            builder.Services.AddScoped<IProductColorRepository, ProductColorService>();
+            builder.Services.AddScoped<ICategoryRepository, CategoryService>();
+            builder.Services.AddScoped<IBrandRepository, BrandService>();
+            builder.Services.AddScoped<IColorRepository, ColorService>();
+            builder.Services.AddScoped<IRoleRepository, RoleService>();
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(100); // Set the desired session timeout.
+                options.Cookie.HttpOnly = true; // Ensure the session cookie is HTTP only.
+            });
+
             builder.Services.AddDbContext<StoreDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("StoreDbContext"));
@@ -42,7 +55,7 @@ namespace Final_DotNet
 				name: "default",
 				pattern: "{controller=Home}/{action=Index}/{id?}");
 
-			app.Run();
+            app.Run();
 		}
 	}
 }

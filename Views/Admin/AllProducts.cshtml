@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Views/Shared/Layout_Admin/_Layout_Admin.cshtml";
+}
+@model List<Product>
+@if (Model != null)
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>ALL OF PRODUCTS</h4>
+                    </div>
+                    <div class="card-body" style="text-align:center;">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Image</th>
+                                    <th>DisPrice</th>
+                                    <th>CurPrice</th>
+                                    <th>Brand</th>
+                                    <th>Category</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model)
+                                {
+                                    <tr>
+                                        <td>@i.ProductId</td>
+                                        <td>@i.Name</td>
+                                        <td>
+                                            <img src="../templates/img/imgProduct/@i.ImageUrl" width="50px" height="50px" alt="@i.Name">
+                                        <td>@i.DisPrice</td>
+                                        <td>@i.CurPrice</td>
+                                        <td>@i.Brand.Name</td>
+                                        <td>@i.Category.Name</td>
+                                        <td>
+                                            <a href="/Admin/EditProduct?ProductId=@i.ProductId" class="btn btn-primary">Edit</a>
+                                        </td>
+                                        <td>
+                                            <form action="/Admin/DeleteProduct?ProductId=@i.ProductId" method="POST">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <h1>Not found</h1>
+}

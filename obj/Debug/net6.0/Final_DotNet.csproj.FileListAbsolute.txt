@@ -83,3 +83,8 @@ G:\DotNet_BT\Final_DotNet\Final_DotNet\obj\Debug\net6.0\refint\Final_DotNet.dll
 G:\DotNet_BT\Final_DotNet\Final_DotNet\obj\Debug\net6.0\Final_DotNet.pdb
 G:\DotNet_BT\Final_DotNet\Final_DotNet\obj\Debug\net6.0\Final_DotNet.genruntimeconfig.cache
 G:\DotNet_BT\Final_DotNet\Final_DotNet\obj\Debug\net6.0\ref\Final_DotNet.dll
+G:\DotNet_BT\Final_DotNet\Final_DotNet\bin\Debug\net6.0\BCrypt.Net-Core.dll
+G:\DotNet_BT\Final_DotNet\Final_DotNet\bin\Debug\net6.0\Newtonsoft.Json.dll
+G:\DotNet_BT\Final_DotNet\Final_DotNet\bin\Debug\net6.0\SixLabors.Fonts.dll
+G:\DotNet_BT\Final_DotNet\Final_DotNet\bin\Debug\net6.0\SixLabors.ImageSharp.dll
+G:\DotNet_BT\Final_DotNet\Final_DotNet\bin\Debug\net6.0\SixLabors.ImageSharp.Drawing.dll

@@ -1,6 +1,6 @@
 ﻿using Final_DotNet.Models;
 using Microsoft.AspNetCore.Mvc;
-using Final_DotNet.Interfaces;
+using Final_DotNet.Repository;
 
 namespace Final_DotNet.Controllers
 {
@@ -20,9 +20,10 @@ namespace Final_DotNet.Controllers
             User user = new User();
             user.FullName = form["fullname"];
             user.UserName = form["username"];
-            user.Password = form["password"];
+            user.Password = BCrypt.Net.BCrypt.HashPassword(form["password"]);
             user.Address = form["address"];
             user.Email = form["email"];
+            user.Gender = form["gender"];
             user.PhoneNumber = form["phone"];
             bool checkUser = IuserRepo.Register(user);
             if (checkUser)

@@ -7175,8 +7175,12 @@ button.bg-dark:focus {
   position: static !important;
 }
 
+.position-relative-1 {
+    text-align: center;
+    padding-bottom: 30px;
+}
 .position-relative {
-  /*position: relative !important;*/
+  position: relative !important;
   text-align:center;
   padding-bottom: 30px;
 }
