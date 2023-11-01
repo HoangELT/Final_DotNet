@@ -11,11 +11,11 @@ namespace Final_DotNet.Controllers
     public class CartController : Controller
     {
         private readonly IProductRepository productRepository;
-        private readonly ILogger<CartController> logger;
-        public CartController(IProductRepository productRepository, ILogger<CartController> logger)
+        private readonly IOrderRepository orderRepository;
+        public CartController(IProductRepository productRepository, IOrderRepository orderRepository)
         {
             this.productRepository = productRepository;
-            this.logger= logger;
+            this.orderRepository = orderRepository;
         }
         public IActionResult Index()
         {
@@ -57,5 +57,27 @@ namespace Final_DotNet.Controllers
             }
             return View("Cart", cart);
         }
+
+        public IActionResult OrderResult()
+        {
+            var user = HttpContext.Session.GetJson<User>("UserLogin");
+            var cartOrder = HttpContext.Session.GetJson<Cart>("cart");
+            if (user != null && cartOrder != null)
+            {
+                orderRepository.addOrder("Ordered",cartOrder.calTotalPrice(),false, user.UserId,cartOrder);
+                HttpContext.Session.Remove("cart");
+                var listOrder =orderRepository.getListOrderbyUserId(user.UserId);
+                return View(listOrder);
+            }else if (user != null)
+            {
+                var listOrder = orderRepository.getListOrderbyUserId(user.UserId);
+                return View(listOrder);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+        }
+
     }
 }

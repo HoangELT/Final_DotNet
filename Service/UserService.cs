@@ -15,8 +15,8 @@ namespace Final_DotNet.Service
         }
         public User FindUserbyId(int id)
         {
-            var user = dbContext.Users.Where(x => x.UserId == id).Select(x => x);
-            return (User)user;
+            var user = dbContext.Users.Find(id);
+            return user;
         }
 
         public List<User> GetAllUser()

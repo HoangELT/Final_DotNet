@@ -22,6 +22,7 @@ namespace Final_DotNet
             builder.Services.AddScoped<IBrandRepository, BrandService>();
             builder.Services.AddScoped<IColorRepository, ColorService>();
             builder.Services.AddScoped<IRoleRepository, RoleService>();
+            builder.Services.AddScoped<IOrderRepository, OrderService>();
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddSession(options =>
             {
@@ -51,7 +52,7 @@ namespace Final_DotNet
 
 			app.UseAuthorization();
 
-			app.MapControllerRoute(
+            app.MapControllerRoute(
 				name: "default",
 				pattern: "{controller=Home}/{action=Index}/{id?}");
 

@@ -17,9 +17,10 @@ namespace Final_DotNet.Controllers
         private readonly IProductColorRepository productColorRepository;
         private readonly IBrandRepository brandRepository;
         private readonly IColorRepository colorRepository;
+        private readonly IOrderRepository orderRepository;
         private readonly IWebHostEnvironment webHostEnvironment;
         private readonly ILogger<AdminController> logger;
-        public AdminController(IWebHostEnvironment webHostEnvironment,ILogger<AdminController> logger, IProductColorRepository productColorRepository, IUserRepository userRepository, ICategoryRepository categoryRepository, IProductRepository productRepository, IColorRepository colorRepository, IBrandRepository brandRepository)
+        public AdminController(IWebHostEnvironment webHostEnvironment,ILogger<AdminController> logger, IOrderRepository orderRepository, IProductColorRepository productColorRepository, IUserRepository userRepository, ICategoryRepository categoryRepository, IProductRepository productRepository, IColorRepository colorRepository, IBrandRepository brandRepository)
         {
             this.userRepository = userRepository;
             this.categoryRepository = categoryRepository;
@@ -29,12 +30,14 @@ namespace Final_DotNet.Controllers
             this.logger = logger;
             this.brandRepository = brandRepository;
             this.webHostEnvironment= webHostEnvironment;
+            this.orderRepository = orderRepository;
         }
         public IActionResult Index()
         {
             ViewBag.TotalUser = userRepository.totalUser();
             ViewBag.TotalProduct = productRepository.toTalProduct();
-            //ViewBag.TotalOrder = productRepository.toTalProduct();
+            ViewBag.TotalOrder = orderRepository.TotalOrder();
+            ViewBag.TotalPrice = orderRepository.TotalPrice();
             return View();
         }
         // --------------User---------------------
@@ -47,26 +50,6 @@ namespace Final_DotNet.Controllers
         {
             return View(productRepository.GetAllProduct());
         }
-        //[HttpPost]
-        //public ActionResult AddProduct(IFormCollection form, IFormFile image)
-        //{
-        //    logger.LogInformation("images " + image.FileName);
-
-        //    if (image != null && image.Length > 0)
-        //    {
-        //        string fileName = image.FileName;
-        //        var uploadsPath = Path.Combine(webHostEnvironment.WebRootPath, "templates", "img", "imgProduct");
-        //        var filePath = Path.Combine(uploadsPath, fileName);
-
-        //        // Sao chép tệp hình ảnh vào thư mục đích
-        //        using (var stream = new FileStream(filePath, FileMode.Create))
-        //        {
-        //            image.CopyTo(stream);
-        //        }
-        //        productRepository.addProduct(form["name"], form["description"], form["small_description"], Double.Parse(form["selling_price"]), Double.Parse(form["original_price"]), image.FileName, Int32.Parse(form["brand_id"]), Int32.Parse(form["category_id"]), form["colors"]);
-        //    }
-        //    return RedirectToAction("AllProducts");
-        //}
         [HttpPost]
         public IActionResult AddProduct(IFormCollection form, IFormFile image)
         {
@@ -207,9 +190,24 @@ namespace Final_DotNet.Controllers
         }
 
         // --------------Order---------------------
-        public IActionResult AllOrders()
+        [Route("Admin/AllOrders")]
+        public IActionResult AllOrders(string status)
         {
-            return View();
+            if (status != null)
+            {
+                return View(orderRepository.getOrderbyStatus(status));
+            }
+            return View(orderRepository.getAllOrder());
+        }
+
+        public IActionResult GetListOrderDetail(int orderId)
+        {
+            return View(orderRepository.getListOrderDetail(orderId));
+        }
+        public IActionResult SetOrderStatus(int orderId, string status)
+        {
+            orderRepository.setOrderbyStatusId(orderId, status);
+            return RedirectToAction("GetListOrderDetail", new { orderId = orderId });
         }
         // --------------Blog---------------------
         public IActionResult AllBlogs()

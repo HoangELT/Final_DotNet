@@ -3,6 +3,8 @@
     Layout = "~/Views/Shared/Layout_Admin/_Layout_Admin.cshtml";
     var totalUser = ViewBag.TotalUser;
     var totalProduct = ViewBag.TotalProduct;
+    var totalOrder = ViewBag.TotalOrder;
+    var totalprice = ViewBag.TotalPrice;
 }
 <div class="container">
     <div class="row">
@@ -44,7 +46,7 @@
                             </div>
                             <div class="text-end pt-1">
                                 <p class="text-sm mb-0 text-capitalize">Total Orders</p>
-                                <h4 class="mb-0">15</h4>
+                                <h4 class="mb-0">@totalOrder</h4>
                             </div>
                         </div>
                     </div>
@@ -57,7 +59,7 @@
                             </div>
                             <div class="text-end pt-1">
                                 <p class="text-sm mb-0 text-capitalize">Revenue</p>
-                                <h4 class="mb-0">2056000 VNĐ</h4>
+                                <h4 class="mb-0">$@totalprice</h4>
                             </div>
                         </div>
                     </div>

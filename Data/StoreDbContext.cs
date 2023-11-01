@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Data;
 using Final_DotNet.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Final_DotNet.Data
 {
@@ -26,15 +27,7 @@ namespace Final_DotNet.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            //config OrderDetail bảng phát sinh từ table Order và Product
-            modelBuilder.Entity<OrderDetail>().HasKey(k => new { k.OrderId, k.ProductId });
-
-            //config Review bảng phát sinh từ table User và Product
-            modelBuilder.Entity<Review>().HasKey(k => new { k.UserId, k.ProductId });
-
-            //config UserRole bảng phát sinh từ table User và role
-            modelBuilder.Entity<UserRole>().HasKey(k => new { k.UserId, k.RoleId });
-
+            modelBuilder.Entity<UserRole>().HasKey(r => new { r.RoleId, r.UserId });
 
             //modelBuilder.Entity<OrderDetail>().HasOne(x => x.Product)
             //                                  .WithMany(x => x.Orders)

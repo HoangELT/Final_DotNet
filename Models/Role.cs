@@ -5,7 +5,8 @@ namespace Final_DotNet.Models
 {
     public class Role
     {
-        public int Id { get; set; }
+        [Key]
+        public int RoleId { get; set; }
         [Required]
         [MaxLength(50)]
         public string Name { get; set; } = string.Empty;

@@ -5,6 +5,8 @@ namespace Final_DotNet.Models
 {
     public class Review
     {
+        [Key]
+        public int ReviewId { get; set; }
         [ForeignKey("User")]
         public int UserId { get; set; }
 

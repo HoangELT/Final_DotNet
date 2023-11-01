@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Views/Shared/Layout_Admin/_Layout_Admin.cshtml";
+    double totalall = 0;
+}
+@model List<OrderDetail>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card my-4">
+                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                    <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                        <h6 class="text-white text-capitalize ps-3">Order Details</h6>
+                    </div>
+                </div>
+                <div class="card-body px-0 pb-2">
+                    <div class="table-responsive p-0">
+                        <div style="padding-left: 20px">
+                            @foreach (var item in Model)
+                            {
+                                <p>
+                                    Full Name: @item.Order.User.FullName<br>
+                                    User Name: @item.Order.User.UserName<br>
+                                    Phone Number: @item.Order.User.PhoneNumber<br>
+                                    Email: @item.Order.User.Email<br>
+                                    Address: @item.Order.User.Address<br>
+                                    Status:
+                                    @if (item.Order.Status.Equals("Ordered"))
+                                    {
+                                        <span class="badge badge-sm bg-gradient-primary">Ordered</span>
+                                    }
+                                    else if (item.Order.Status.Equals("Delivering"))
+                                    {
+                                        <span class="badge badge-sm bg-gradient-info">Delivering</span>
+                                    }
+                                    else if (item.Order.Status.Equals("Success"))
+                                    {
+                                        <span class="badge badge-sm bg-gradient-success">Success</span>
+                                    }
+                                    Update to:
+                                    @{
+                                        if (item.Order.Status.Equals("Ordered"))
+                                        {
+                                            <a href="/Admin/SetOrderStatus?orderId=@item.OrderId&status=Delivering"><span class="badge badge-sm bg-gradient-info">Delivering</span></a>
+                                        }
+                                        else if (item.Order.Status.Equals("Delivering"))
+                                        {
+                                            <a href="/Admin/SetOrderStatus?orderId=@item.OrderId&status=Success"><span class="badge badge-sm bg-gradient-primary">Success</span></a>
+                                        }
+                                        else if (item.Order.Status.Equals("Success"))
+                                        {
+                                            <span class="badge badge-sm bg-gradient-primary">Success</span>
+                                        }
+                                    }
+                                </p>
+                                break;
+                            }
+
+                        </div>
+                    </div>
+
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Name</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Product Information</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date Order</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach(var i in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+                                            <div>
+                                                <img src="../templates/img/imgProduct/@i.Product.ImageUrl" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-sm">@i.Product.Name</h6>
+                                                <p class="text-xs text-secondary mb-0">Selling Price: $@i.Product.CurPrice</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0">
+                                            Into money: $@(i.Product.CurPrice * i.Quantity)
+                                        </p>
+                                        <p class="text-xs text-secondary mb-0">Quantity: @i.Quantity</p>
+                                    </td>
+                                    <td>
+                                        <span class="text-secondary text-xs font-weight-bold">
+                                            @Convert.ToDateTime(@i.Order.CreateAt).ToString("dd/MM/yyyy")
+                                        </span>
+                                    </td>
+                                </tr>
+                                totalall += i.Product.CurPrice * i.Quantity;
+                            }
+                        </tbody>
+                    </table>
+                    <div style="padding-left: 20px">
+                        <h2>Total: $@totalall</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
