@@ -6,7 +6,7 @@
 @model List<OrderDetail>
 @if (TempData["UpdateStatusSuccess"] != null)
 {
-    <div id="update-status-success-message">@TempData["UpdateStatusSuccess"]</div>
+    <div id="update-status-success-message" update-data="@TempData["UpdateStatusSuccess"]"></div>
 }
 <div class="container-fluid">
     <div class="row">
@@ -113,11 +113,10 @@
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function (e) {
-        var updateSuccessMessage = document.getElementById("update-status-success-message");
-
+        var updateSuccessMessage = document.getElementById("update-status-success-message").getAttribute("update-data");
         if (updateSuccessMessage) {
             alertify.set('notifier', 'position', 'top-right');
-            alertify.success(updateSuccessMessage.textContent);
+            alertify.success(updateSuccessMessage);
             e.preventDefault();
         }
     });

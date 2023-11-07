@@ -3,10 +3,26 @@
     Layout = "~/Views/Shared/Layout_Index/_Layout_Index.cshtml";
 }
 @model User
+@if (TempData["UpdateSuccess"] != null)
+{
+    <div id="information-account" update-success="@TempData["UpdateSuccess"]"></div>
+}
+@if (TempData["ChangePasswordSuccess"] != null)
+{
+    <div id="change-password-success" data-success="@TempData["ChangePasswordSuccess"]"></div>
+}
+@if (TempData["ChangePasswordFailed"] != null)
+{
+    <div id="change-password-failed" data-failed="@TempData["ChangePasswordFailed"]"></div>
+}
+@if (TempData["PasswordNotSameCpassword"] != null)
+{
+    <div id="notsame-password" data-notsame="@TempData["PasswordNotSameCpassword"]"></div>
+}
 <h2 style="text-align:center; padding:40px">INFORMATION USER</h2>
 <div class="container" style="display: flex;justify-content: space-evenly;flex-wrap: nowrap;flex-direction: row;align-content: stretch;align-items: stretch;">
     <div class="content">
-        <form action="/Account/EditInformation" method="post" id="information-account" update-success="@TempData["UpdateSuccess"]">
+        <form action="/Account/EditInformation" method="post">
             <input type="hidden" name="userid" value="@Model.UserId">
             <div>
                 <table class="table table-light table-borderless">    
@@ -76,7 +92,7 @@
         </form>
     </div>
     <div class="content">
-        <form action="/Account/ChangePassword" method="post" id="change-account" data-success="@TempData["ChangePasswordSuccess"]" data-failed="@TempData["ChangePasswordFailed"]" data-notsame="@TempData["PasswordNotSameCpassword"]">
+        <form action="/Account/ChangePassword" method="post" >
             <input type="hidden" name="userid" value="@Model.UserId">
             <div>
                 <table class="table table-light table-borderless">
@@ -114,27 +130,27 @@
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function(e) {
-        var changeAccountForm = document.getElementById("change-account");
+        var changePasssucess = document.getElementById("change-password-success");
+        var changePassFailed = document.getElementById("change-password-failed");
+        var PasswordNotSame = document.getElementById("notsame-password");
         var updateAccountForm = document.getElementById("information-account");
-        if (changeAccountForm) {
-            var changePasswordSuccess = changeAccountForm.getAttribute("data-success");
-            var changePasswordFailed = changeAccountForm.getAttribute("data-failed");
-            var PasswordNotSame = changeAccountForm.getAttribute("data-notsame");
-            if (changePasswordSuccess != "") {
-                alertify.set('notifier', 'position', 'top-right');
-                alertify.success(changePasswordSuccess);
-                e.preventDefault();
-            }
-            else if (changePasswordFailed != "") {
-                alertify.set('notifier', 'position', 'top-right');
-                alertify.error(changePasswordFailed);
-                e.preventDefault();
-            }
-            else if (PasswordNotSame != "") {
-                alertify.set('notifier', 'position', 'top-right');
-                alertify.error(PasswordNotSame);
-                e.preventDefault();
-            }
+        if (changePasssucess) {
+            var changeSuccess = changePasssucess.getAttribute("data-success");
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.success(changeSuccess);
+            e.preventDefault();
+        }
+        if (changePassFailed) {
+            var changeFailed = changePassFailed.getAttribute("data-failed");
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.error(changeFailed);
+            e.preventDefault();
+        }
+        if (PasswordNotSame) {
+            var NotSame = PasswordNotSame.getAttribute("data-notsame");
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.error(NotSame);
+            e.preventDefault();
         }
         if (updateAccountForm) {
             var updatesuccess = updateAccountForm.getAttribute("update-success");

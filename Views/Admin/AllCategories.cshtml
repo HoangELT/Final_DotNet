@@ -72,43 +72,49 @@
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function (e) {
-        var deleteSuccessMessage = document.getElementById("delete-success-message").getAttribute("delete-success");
-        var deleteFailedMessage = document.getElementById("delete-failed-message").getAttribute("delete-failed");
-        var updateSuccessMessage = document.getElementById("update-success-message").getAttribute("update-success");
-        var updateFailedMessage = document.getElementById("update-failed-message").getAttribute("update-failed");
-        var addSuccessMessage = document.getElementById("add-success-message").getAttribute("add-success");
-        var addFailedMessage = document.getElementById("add-failed-message").getAttribute("add-failed");
+        var deleteSuccessMessage = document.getElementById("delete-success-message");
+        var deleteFailedMessage = document.getElementById("delete-failed-message");
+        var updateSuccessMessage = document.getElementById("update-success-message");
+        var updateFailedMessage = document.getElementById("update-failed-message");
+        var addSuccessMessage = document.getElementById("add-success-message");
+        var addFailedMessage = document.getElementById("add-failed-message");
 
         if (deleteSuccessMessage) {
+            var message = deleteSuccessMessage.getAttribute("delete-success");
             alertify.set('notifier', 'position', 'top-right');
-            alertify.success(deleteSuccessMessage);
+            alertify.success(message);
             e.preventDefault();
         }
         if (deleteFailedMessage) {
+            var message = deleteFailedMessage.getAttribute("delete-failed");
             alertify.set('notifier', 'position', 'top-right');
-            alertify.error(deleteFailedMessage);
+            alertify.error(message);
             e.preventDefault();
         }
         if (updateSuccessMessage) {
+            var message = updateSuccessMessage.getAttribute("update-success");
             alertify.set('notifier', 'position', 'top-right');
-            alertify.success(updateSuccessMessage);
+            alertify.success(message);
             e.preventDefault();
         }
 
         if (updateFailedMessage) {
+            var message = updateFailedMessage.getAttribute("update-failed");
             alertify.set('notifier', 'position', 'top-right');
-            alertify.error(updateFailedMessage);
+            alertify.error(message);
             e.preventDefault();
         }
         if (addSuccessMessage) {
+            var message = addSuccessMessage.getAttribute("add-success");
             alertify.set('notifier', 'position', 'top-right');
-            alertify.success(addSuccessMessage);
+            alertify.success(message);
             e.preventDefault();
         }
 
         if (addFailedMessage) {
+            var message = addFailedMessage.getAttribute("add-failed");
             alertify.set('notifier', 'position', 'top-right');
-            alertify.error(addFailedMessage);
+            alertify.error(message);
             e.preventDefault();
         }
     });

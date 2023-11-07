@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Final_DotNet.Data;
 using Microsoft.AspNetCore.Hosting;
+using Final_DotNet.Service.Auth;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Final_DotNet
 {
@@ -25,6 +27,9 @@ namespace Final_DotNet
             builder.Services.AddScoped<IOrderRepository, OrderService>();
             builder.Services.AddScoped<IReviewRepository, ReviewService>();
             builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddHttpContextAccessor();
+            builder.Services.AddScoped<AuthService>();
+            builder.Services.AddScoped<AdminAccessFilter>();
             builder.Services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(1000); // Set the desired session timeout.

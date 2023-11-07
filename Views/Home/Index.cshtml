@@ -6,7 +6,7 @@
 @model List<Product>
 @if (TempData["LoginSuccess"] != null)
 {
-    <div id="login-success-message">@TempData["LoginSuccess"]</div>
+    <div id="login-success-message" login-success="@TempData["LoginSuccess"]"></div>
 }
 <!-- Carousel Start -->
 <div class="container-fluid mb-3">
@@ -119,8 +119,9 @@
         document.addEventListener("DOMContentLoaded", function (e) {
             var loginSuccess= document.getElementById("login-success-message");
             if (loginSuccess) {
+                var login = loginSuccess.getAttribute("login-success");
                 alertify.set('notifier', 'position', 'top-right');
-                alertify.success(loginSuccess.textContent);
+                alertify.success(login.toString());
                 e.preventDefault();
             }
         });

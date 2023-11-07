@@ -58,7 +58,8 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #6C757D;
+/*  color: #6C757D;*/
+  color:white;
   text-align: left;
   background-color: #F5F5F5;
 }

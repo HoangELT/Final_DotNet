@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\templates\img\imgBlog\**" />
     <Compile Remove="wwwroot\templates\register\**" />
+    <Content Remove="wwwroot\templates\img\imgBlog\**" />
     <Content Remove="wwwroot\templates\register\**" />
+    <EmbeddedResource Remove="wwwroot\templates\img\imgBlog\**" />
     <EmbeddedResource Remove="wwwroot\templates\register\**" />
+    <None Remove="wwwroot\templates\img\imgBlog\**" />
     <None Remove="wwwroot\templates\register\**" />
   </ItemGroup>
 
@@ -23,10 +27,6 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="2.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\templates\img\imgBlog\" />
   </ItemGroup>
 
 </Project>

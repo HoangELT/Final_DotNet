@@ -1,15 +1,14 @@
 ﻿using Final_DotNet.Infrastructure;
 using Final_DotNet.Models;
 using Final_DotNet.Repository;
-using Microsoft.AspNetCore.Hosting;
+using Final_DotNet.Service.Auth;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.SqlServer.Server;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
 
 namespace Final_DotNet.Controllers
 {
+    [ServiceFilter(typeof(AdminAccessFilter))]
     public class AdminController : Controller
     {
         private readonly IUserRepository userRepository;
@@ -37,25 +36,11 @@ namespace Final_DotNet.Controllers
         }
         public IActionResult Index()
         {
-            var user = HttpContext.Session.GetJson<User>("UserLogin");
-            if (user != null)
-            {
-                if (userroleRepo.AuthUserAdmin(user))
-                {
-                    ViewBag.TotalUser = userRepository.totalUser();
-                    ViewBag.TotalProduct = productRepository.toTalProduct();
-                    ViewBag.TotalOrder = orderRepository.TotalOrder();
-                    ViewBag.TotalPrice = orderRepository.TotalPrice();
-                    return View();
-                }
-                else
-                {
-                    //TempData["NotAdmin"] = "You are not Admin";
-                    return RedirectToAction("Index", "Home");
-                }
-            }
-            TempData["NotLogin"] = "Please login to continue";
-            return RedirectToAction("Login", "Account");
+            ViewBag.TotalUser = userRepository.totalUser();
+            ViewBag.TotalProduct = productRepository.toTalProduct();
+            ViewBag.TotalOrder = orderRepository.TotalOrder();
+            ViewBag.TotalPrice = orderRepository.TotalPrice();
+            return View();
         }
         // --------------User---------------------
         public IActionResult AllUser()
