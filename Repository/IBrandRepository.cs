@@ -6,8 +6,8 @@ namespace Final_DotNet.Repository
     {
         public List<Brand> GetListBrand();
         public Brand GetBrandById(int id);
-        public void updateBrand(Brand brand);
-        public void addBrand(string name);
-        public void deleteBrand(int id);
+        public bool updateBrand(Brand brand);
+        public bool addBrand(string name);
+        public bool deleteBrand(int id);
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Final_DotNet.Models.Page
+﻿using Final_DotNet.Models;
+
+namespace Final_DotNet.ViewModels.Page
 {
     public class ProductListView
     {

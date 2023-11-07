@@ -1,4 +1,5 @@
-﻿using Final_DotNet.Models;
+﻿using Final_DotNet.Infrastructure;
+using Final_DotNet.Models;
 using Final_DotNet.Repository;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -15,12 +16,13 @@ namespace Final_DotNet.Controllers
         private readonly ICategoryRepository categoryRepository;
         private readonly IProductRepository productRepository;
         private readonly IProductColorRepository productColorRepository;
+        private readonly IUserRoleRepository userroleRepo;
         private readonly IBrandRepository brandRepository;
         private readonly IColorRepository colorRepository;
         private readonly IOrderRepository orderRepository;
         private readonly IWebHostEnvironment webHostEnvironment;
         private readonly ILogger<AdminController> logger;
-        public AdminController(IWebHostEnvironment webHostEnvironment,ILogger<AdminController> logger, IOrderRepository orderRepository, IProductColorRepository productColorRepository, IUserRepository userRepository, ICategoryRepository categoryRepository, IProductRepository productRepository, IColorRepository colorRepository, IBrandRepository brandRepository)
+        public AdminController(IUserRoleRepository userroleRepo,IWebHostEnvironment webHostEnvironment,ILogger<AdminController> logger, IOrderRepository orderRepository, IProductColorRepository productColorRepository, IUserRepository userRepository, ICategoryRepository categoryRepository, IProductRepository productRepository, IColorRepository colorRepository, IBrandRepository brandRepository)
         {
             this.userRepository = userRepository;
             this.categoryRepository = categoryRepository;
@@ -31,14 +33,29 @@ namespace Final_DotNet.Controllers
             this.brandRepository = brandRepository;
             this.webHostEnvironment= webHostEnvironment;
             this.orderRepository = orderRepository;
+            this.userroleRepo = userroleRepo;
         }
         public IActionResult Index()
         {
-            ViewBag.TotalUser = userRepository.totalUser();
-            ViewBag.TotalProduct = productRepository.toTalProduct();
-            ViewBag.TotalOrder = orderRepository.TotalOrder();
-            ViewBag.TotalPrice = orderRepository.TotalPrice();
-            return View();
+            var user = HttpContext.Session.GetJson<User>("UserLogin");
+            if (user != null)
+            {
+                if (userroleRepo.AuthUserAdmin(user))
+                {
+                    ViewBag.TotalUser = userRepository.totalUser();
+                    ViewBag.TotalProduct = productRepository.toTalProduct();
+                    ViewBag.TotalOrder = orderRepository.TotalOrder();
+                    ViewBag.TotalPrice = orderRepository.TotalPrice();
+                    return View();
+                }
+                else
+                {
+                    //TempData["NotAdmin"] = "You are not Admin";
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            TempData["NotLogin"] = "Please login to continue";
+            return RedirectToAction("Login", "Account");
         }
         // --------------User---------------------
         public IActionResult AllUser()
@@ -59,10 +76,8 @@ namespace Final_DotNet.Controllers
 
             using (var imageStream = image.OpenReadStream())
             {
-                // Load ảnh gốc
                 using (var originalImage = Image.Load(imageStream))
                 {
-                    // Chỉnh kích thước
                     originalImage.Mutate(x => x
                         .Resize(new ResizeOptions
                         {
@@ -70,13 +85,15 @@ namespace Final_DotNet.Controllers
                             Mode = ResizeMode.Max
                         }));
 
-                    // Lưu ảnh đã chỉnh sửa
-                    originalImage.Save(filePath); // Lưu ảnh đã chỉnh sửa vào đường dẫn filePath
+                    originalImage.Save(filePath);
                 }
-
-                // Thêm sản phẩm vào cơ sở dữ liệu
-                productRepository.addProduct(form["name"], form["description"], form["small_description"], Double.Parse(form["selling_price"]), Double.Parse(form["original_price"]), image.FileName, Int32.Parse(form["brand_id"]), Int32.Parse(form["category_id"]), form["colors"]);
-
+                var isproduct = productRepository.addProduct(form["name"], form["description"], form["small_description"], Double.Parse(form["selling_price"]), Double.Parse(form["original_price"]), image.FileName, Int32.Parse(form["brand_id"]), Int32.Parse(form["category_id"]), form["colors"]);
+                if (isproduct)
+                {
+                    TempData["AddProductSuccess"] = "Added product successfully";
+                    return RedirectToAction("AllProducts");
+                }
+                TempData["AddProductFailed"] = "Add product failed";
                 return RedirectToAction("AllProducts");
             }
         }
@@ -119,28 +136,38 @@ namespace Final_DotNet.Controllers
             newProduct.Description = form["description"];
             newProduct.SmallDescription = form["small_description"];
             newProduct.BrandId = Int32.Parse(form["brand_id"]);
-            logger.LogInformation("product " + newProduct.ProductId);
+
             if (image != null && image.Length > 0)
             {
                 newProduct.ImageUrl = image.FileName;
                 var uploadsPath = Path.Combine(webHostEnvironment.WebRootPath, "templates", "img", "imgProduct");
                 var filePath = Path.Combine(uploadsPath, image.FileName);
 
-                // Sao chép tệp hình ảnh vào thư mục đích
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     image.CopyTo(stream);
                 }
             }
             else { newProduct.ImageUrl = form["old_image"]; }
-            productRepository.updateProduct(newProduct);
-            productColorRepository.updateProductColor(proId, form["colors"]);
+
+            if (productRepository.updateProduct(newProduct))
+            {
+                productColorRepository.updateProductColor(proId, form["colors"]);
+                TempData["UpdateProductSuccess"] = "Updated product successfully";
+                return RedirectToAction("AllProducts");
+            }
+            TempData["UpdateProductFailed"] = "Update product failed";
             return RedirectToAction("AllProducts");
         }
         [HttpPost]
         public ActionResult DeleteProduct(int productId)
         {
-            productRepository.deleteProduct(productId);
+            if (productRepository.deleteProduct(productId))
+            {
+                TempData["DeleteProductSuccess"] = "Deleted product successfully";
+                return RedirectToAction("AllProducts");
+            }
+            TempData["DeleteProductFailed"] = "Delete product failed";
             return RedirectToAction("AllProducts");
         }
 
@@ -152,13 +179,23 @@ namespace Final_DotNet.Controllers
         [HttpPost]
         public ActionResult DeleteCategory(int categoryId)
         {
-            categoryRepository.deleteCategory(categoryId);
+            if (categoryRepository.deleteCategory(categoryId))
+            {
+                TempData["DeleteCategorySuccess"] = "Deleted category successfully";
+                return RedirectToAction("AllCategories");
+            }
+            TempData["DeleteCategoryFailed"] = "Delete category failed";
             return RedirectToAction("AllCategories");
         }
         [HttpPost]
         public ActionResult AddCategory(IFormCollection form)
         {
-            categoryRepository.addCategory(form["name"], form["description"]);
+            if(categoryRepository.addCategory(form["name"], form["description"]))
+            {
+                TempData["AddCategorySuccess"] = "Added category successfully";
+                return RedirectToAction("AllCategories");
+            }
+            TempData["AddCategoryFailed"] = "Add category failed";
             return RedirectToAction("AllCategories");
         }
         public IActionResult AddCategory()
@@ -173,20 +210,16 @@ namespace Final_DotNet.Controllers
             newCategory.CategoryId = Int32.Parse(cateId);
             newCategory.Name = form["name"];
             newCategory.Description = form["description"];
-            categoryRepository.updateCategory(newCategory);
+            if(categoryRepository.updateCategory(newCategory)){
+                TempData["UpdateCategorySuccess"] = "Updated category successfully";
+                return RedirectToAction("AllCategories");
+            }
+            TempData["UpdateCategoryFailed"] = "Update category failed";
             return RedirectToAction("AllCategories");
         }
         public IActionResult EditCategory(int categoryId)
         {
-            var cate = categoryRepository.getAllCategories();
-            foreach (var c in cate)
-            {
-                if (c.CategoryId == categoryId)
-                {
-                    return View(c);
-                }
-            }
-            return NotFound();
+            return View(categoryRepository.getCategorybyId(categoryId));
         }
 
         // --------------Order---------------------
@@ -207,24 +240,10 @@ namespace Final_DotNet.Controllers
         public IActionResult SetOrderStatus(int orderId, string status)
         {
             orderRepository.setOrderbyStatusId(orderId, status);
+            TempData["UpdateStatusSuccess"] = "Updated status successfully";
             return RedirectToAction("GetListOrderDetail", new { orderId = orderId });
         }
-        // --------------Blog---------------------
-        public IActionResult AllBlogs()
-        {
-            return View();
-        }
-
-        public IActionResult AddBlog()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult AddBlog(IFormCollection form)
-        {
-            return View();
-        }
-
+        
         // --------------Brand---------------------
         public IActionResult AllBrands()
         {
@@ -238,7 +257,12 @@ namespace Final_DotNet.Controllers
         [HttpPost]
         public IActionResult AddBrand(IFormCollection form)
         {
-            brandRepository.addBrand(form["brand_name"]);
+            if (brandRepository.addBrand(form["brand_name"]))
+            {
+                TempData["AddBrandSuccess"] = "Added brand successfully";
+                return RedirectToAction("AllBrands");
+            }
+            TempData["AddBrandFailed"] = "Add brand failed";
             return RedirectToAction("AllBrands");
         }
         [HttpPost]
@@ -247,7 +271,12 @@ namespace Final_DotNet.Controllers
             var brand = new Brand();
             brand.BrandId = Int32.Parse(form["brandId"]);
             brand.Name = form["brand_name"];
-            brandRepository.updateBrand(brand);
+            if (brandRepository.updateBrand(brand))
+            {
+                TempData["EditBrandSuccess"] = "Updated brand successfully";
+                return RedirectToAction("AllBrands");
+            }
+            TempData["EditBrandFailed"] = "Update brand failed";
             return RedirectToAction("AllBrands");
         }
         public IActionResult EditBrand(int brandId)
@@ -256,7 +285,12 @@ namespace Final_DotNet.Controllers
         }
         public IActionResult DeleteBrand(int brandId)
         {
-            brandRepository.deleteBrand(brandId);
+            if (brandRepository.deleteBrand(brandId))
+            {
+                TempData["DeleteBrandSuccess"] = "Deleted brand successfully";
+                return RedirectToAction("AllBrands");
+            }
+            TempData["DeleteBrandFailed"] = "Delete brand failed";
             return RedirectToAction("AllBrands");
         }
         // --------------Brand---------------------
@@ -272,7 +306,12 @@ namespace Final_DotNet.Controllers
         [HttpPost]
         public IActionResult AddColor(IFormCollection form)
         {
-            colorRepository.addColor(form["color_name"]);
+            if (colorRepository.addColor(form["color_name"]))
+            {
+                TempData["AddColorSuccess"] = "Added color successfully";
+                return RedirectToAction("AllColors");
+            }
+            TempData["AddColorFailed"] = "Add color failed";
             return RedirectToAction("AllColors");
         }
         [HttpPost]
@@ -281,16 +320,26 @@ namespace Final_DotNet.Controllers
             var color = new Models.Color();
             color.ColorId = Int32.Parse(form["colorId"]);
             color.Name = form["color_name"];
-            colorRepository.updateColor(color);
+            if (colorRepository.updateColor(color))
+            {
+                TempData["UpdateColorSuccess"] = "Updated color successfully";
+                return RedirectToAction("AllColors");
+            }
+            TempData["UpdateColorFailed"] = "Update color failed";
             return RedirectToAction("AllColors");
         }
-        public IActionResult EditColor(int brandId)
+        public IActionResult EditColor(int colorId)
         {
-            return View(brandRepository.GetBrandById(brandId));
+            return View(colorRepository.getColorbyId(colorId));
         }
         public IActionResult DeleteColor(int colorId)
         {
-            colorRepository.deleteColor(colorId);
+            if (colorRepository.deleteColor(colorId))
+            {
+                TempData["DeleteColorSuccess"] = "Deleted color successfully";
+                return RedirectToAction("AllColors");
+            }
+            TempData["DeleteColorFailed"] = "Delete color failed";
             return RedirectToAction("AllColors");
         }
     }

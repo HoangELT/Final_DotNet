@@ -34,12 +34,7 @@ namespace Final_DotNet.Service
             return pro;
         }
 
-        public Product GetProductByName(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void deleteProduct(int prouductId)
+        public bool deleteProduct(int prouductId)
         {
             var pro = _dbContext.Products.Find(prouductId);
             var proColor = _dbContext.ProductColors.Where(p => p.ProductId == prouductId).ToList();
@@ -48,35 +43,48 @@ namespace Final_DotNet.Service
                 _dbContext.Products.Remove(pro);
                 _dbContext.ProductColors.RemoveRange(proColor);
                 _dbContext.SaveChanges();
+                return true;
             }
+            return false;
         }
 
-        public void updateProduct(Product product)
+        public bool updateProduct(Product product)
         {
             var pro = GetProductById(product.ProductId);
-            pro.Name = product.Name;
-            pro.Description = product.Description;
-            pro.BrandId = product.BrandId;
-            pro.CategoryId = product.CategoryId;
-            pro.DisPrice = product.DisPrice;
-            pro.CurPrice = product.CurPrice;
-            pro.ImageUrl = product.ImageUrl;
-            pro.SmallDescription = product.SmallDescription;
-            _dbContext.Products.Update(pro);
-            _dbContext.SaveChanges();
+            if(pro!= null)
+            {
+                pro.Name = product.Name;
+                pro.Description = product.Description;
+                pro.BrandId = product.BrandId;
+                pro.CategoryId = product.CategoryId;
+                pro.DisPrice = product.DisPrice;
+                pro.CurPrice = product.CurPrice;
+                pro.ImageUrl = product.ImageUrl;
+                pro.SmallDescription = product.SmallDescription;
+                _dbContext.Products.Update(pro);
+                _dbContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
-        public void addProduct(string name, string description, string smallDescription, double curprice, double disprice, string imgUrl, int brandId, int categoryId, string colors)
+        public bool addProduct(string name, string description, string smallDescription, double curprice, double disprice, string imgUrl, int brandId, int categoryId, string colors)
         {
             string[] ColorIds = colors.Split(",");
-            _dbContext.Products.Add(new Product(name, description, smallDescription, curprice, disprice, imgUrl, brandId, categoryId));
-            _dbContext.SaveChanges();
-
-            int productId = _dbContext.Products.OrderByDescending(p => p.ProductId).First().ProductId;
-            foreach (var k in ColorIds)
+            var pro = _dbContext.Products.FirstOrDefault(p => p.Name == name);
+            if(pro == null)
             {
-                productColorRepository.addProductColor(productId, Int32.Parse(k));
+                _dbContext.Products.Add(new Product(name, description, smallDescription, curprice, disprice, imgUrl, brandId, categoryId));
+                _dbContext.SaveChanges();
+
+                int productId = _dbContext.Products.OrderByDescending(p => p.ProductId).First().ProductId;
+                foreach (var k in ColorIds)
+                {
+                    productColorRepository.addProductColor(productId, Int32.Parse(k));
+                }
+                return true;
             }
+            return false;
         }
 
         public int toTalProduct()

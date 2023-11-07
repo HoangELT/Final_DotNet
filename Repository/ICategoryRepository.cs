@@ -7,8 +7,9 @@ namespace Final_DotNet.Repository
         public List<Category> getAllCategories();
 
         public List<Product> getAllproductCategory(string name);
-        public void addCategory(string name, string description);
-        public void deleteCategory(int categoryId);
-        public void updateCategory(Category category);
+        public Category getCategorybyId(int categoryId);
+        public bool addCategory(string name, string description);
+        public bool deleteCategory(int categoryId);
+        public bool updateCategory(Category category);
     }
 }

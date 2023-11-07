@@ -8,7 +8,6 @@ namespace Final_DotNet.Data
     public class StoreDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Blog> Blogs { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Role> Roles { get; set; }

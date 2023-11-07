@@ -3,6 +3,30 @@
     Layout = "~/Views/Shared/Layout_Admin/_Layout_Admin.cshtml";
 }
 @model List<Category>
+@if (TempData["DeleteCategorySuccess"] != null)
+{
+    <div id="delete-success-message" delete-success="@TempData["DeleteCategorySuccess"]"></div>
+}
+@if (TempData["DeleteCategoryFailed"] != null)
+{
+    <div id="delete-failed-message" delete-failed="@TempData["DeleteCategoryFailed"]"></div>
+}
+@if (TempData["UpdateCategorySuccess"] != null)
+{
+    <div id="update-success-message" update-success="@TempData["UpdateCategorySuccess"]"></div>
+}
+@if (TempData["UpdateCategoryFailed"] != null)
+{
+    <div id="update-failed-message" update-failed="@TempData["UpdateCategoryFailed"]"></div>
+}
+@if (TempData["AddCategorySuccess"] != null)
+{
+    <div id="add-success-message" add-success="@TempData["AddCategorySuccess"]"></div>
+}
+@if (TempData["AddCategoryFailed"] != null)
+{
+    <div id="add-failed-message" add-failed="@TempData["AddCategoryFailed"]"></div>
+}
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
@@ -46,3 +70,46 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function (e) {
+        var deleteSuccessMessage = document.getElementById("delete-success-message").getAttribute("delete-success");
+        var deleteFailedMessage = document.getElementById("delete-failed-message").getAttribute("delete-failed");
+        var updateSuccessMessage = document.getElementById("update-success-message").getAttribute("update-success");
+        var updateFailedMessage = document.getElementById("update-failed-message").getAttribute("update-failed");
+        var addSuccessMessage = document.getElementById("add-success-message").getAttribute("add-success");
+        var addFailedMessage = document.getElementById("add-failed-message").getAttribute("add-failed");
+
+        if (deleteSuccessMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.success(deleteSuccessMessage);
+            e.preventDefault();
+        }
+        if (deleteFailedMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.error(deleteFailedMessage);
+            e.preventDefault();
+        }
+        if (updateSuccessMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.success(updateSuccessMessage);
+            e.preventDefault();
+        }
+
+        if (updateFailedMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.error(updateFailedMessage);
+            e.preventDefault();
+        }
+        if (addSuccessMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.success(addSuccessMessage);
+            e.preventDefault();
+        }
+
+        if (addFailedMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.error(addFailedMessage);
+            e.preventDefault();
+        }
+    });
+</script>

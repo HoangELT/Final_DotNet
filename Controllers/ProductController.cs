@@ -1,9 +1,9 @@
 ﻿using Final_DotNet.Data;
+using Final_DotNet.Infrastructure;
 using Final_DotNet.Models;
-using Final_DotNet.Models.Page;
 using Final_DotNet.Repository;
+using Final_DotNet.ViewModels.Page;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Diagnostics;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 
@@ -16,15 +16,19 @@ namespace Final_DotNet.Controllers
         private readonly IBrandRepository brandRepository;
         private readonly ICategoryRepository categoryRepository;
         private readonly IColorRepository colorRepository;
+        private readonly IOrderRepository orderRepository;
+        private readonly IReviewRepository revewRepository;
         private readonly StoreDbContext db;
         private int PageSize = 9;
-        public ProductController(StoreDbContext db, ICategoryRepository categoryRepository,IColorRepository colorRepository,IBrandRepository brandRepository,IProductRepository productRepository, IProductColorRepository productcolorRepository)
+        public ProductController(IOrderRepository orderRepository,StoreDbContext db, IReviewRepository revewRepository, ICategoryRepository categoryRepository,IColorRepository colorRepository,IBrandRepository brandRepository,IProductRepository productRepository, IProductColorRepository productcolorRepository)
         {
             this.productRepository = productRepository;
             this.productcolorRepository = productcolorRepository;
             this.brandRepository = brandRepository;
             this.colorRepository = colorRepository;
             this.categoryRepository = categoryRepository;
+            this.revewRepository = revewRepository;
+            this.orderRepository= orderRepository;
             this.db = db;
         }
         // trả về product detail
@@ -33,14 +37,24 @@ namespace Final_DotNet.Controllers
             var Listproduct = productRepository.GetAllProduct();
             ViewBag.listAllproduct = Listproduct;
             ViewBag.listcolor = productcolorRepository.GetProductColor(productId);
-            foreach(var item in Listproduct)
+
+            var allreview = revewRepository.getAllReviewbyproductId(productId);
+            var totalreview = revewRepository.totalReview(productId);
+            var totalproductrating = revewRepository.totalProductRating(productId);
+            if (allreview != null && totalreview > 0 && totalproductrating > 0)
             {
-                if (item.ProductId == productId)
-                {
-                    ViewBag.brand = brandRepository.GetBrandById(item.BrandId);
-                }
+                ViewBag.AllReviews = allreview;
+                ViewBag.totalReviewRating = totalreview;
+                ViewBag.totalProductRating = totalproductrating;
+                return View(productRepository.GetProductById(productId));
             }
-            return View(productRepository.GetProductById(productId));
+            else
+            {
+                ViewBag.AllReviews = null;
+                ViewBag.totalReviewRating = 0;
+                ViewBag.totalProductRating = 0;
+                return View(productRepository.GetProductById(productId));
+            }
         }
         public void Contain()
         {
@@ -50,7 +64,7 @@ namespace Final_DotNet.Controllers
             {
                 colorOfproduct.Add(productcolorRepository.GetProductColor(product.ProductId).FirstOrDefault());
             }
-            ViewBag.ListcolorProducts = colorOfproduct;
+            ViewBag.colorProducts = colorOfproduct;
 
             ViewBag.ListColor = colorRepository.getAllColor();
             ViewBag.ListBand = brandRepository.GetListBrand();
@@ -128,13 +142,11 @@ namespace Final_DotNet.Controllers
                 filterlistproducts = filterlistproducts.Where(p => ListPriceRange.Any(range => p.CurPrice >= range.Min && p.CurPrice <= range.Max)).ToList();
             }
             if (filter.Colors != null && filter.Colors.Count > 0 && !filter.Colors.Contains("all")){
-                //danh sách các product thỏa mãn các color được check
                 foreach (var range in filter.Colors)
                 {
                     var listpro = productcolorRepository.GetProductbyColorId(Int32.Parse(range));
                     filterlistproducts = listpro;
                 }
-                //filterlistproducts = listpro;
             }
             if (filter.Brands != null && filter.Brands.Count > 0 && !filter.Brands.Contains("all"))
             {
@@ -145,6 +157,59 @@ namespace Final_DotNet.Controllers
                 }
             }
             return PartialView("ResultFilter",filterlistproducts);
+        }
+        public IActionResult Review(int productid, int orderdetailId)
+        {
+            var product = productRepository.GetProductById(productid);
+            var totalreview = revewRepository.totalReview(productid);
+            var totalproductrating = revewRepository.totalProductRating(productid);
+            if (product != null && totalreview > 0 && totalproductrating > 0)
+            {
+                ViewBag.totalReviewRating22 = totalreview;
+                ViewBag.totalProductRating22 = totalproductrating;
+                ViewBag.OrderdetailId = orderdetailId;
+                return View(product);
+            }
+            else if(product != null)
+            {
+                ViewBag.totalReviewRating22 = 0;
+                ViewBag.totalProductRating22 = 0;
+                ViewBag.OrderdetailId = orderdetailId;
+                return View(product);
+            }
+            else
+            {
+                return NotFound("Not found Product");
+            }
+        }
+        
+        [HttpPost]
+        public IActionResult Review(IFormCollection form)
+        {
+            var user = HttpContext.Session.GetJson<User>("UserLogin");
+            revewRepository.addReview(user.UserId, int.Parse(form["productId"]), int.Parse(form["rating"]), form["comment"]);
+            orderRepository.updateOrderDetail(int.Parse(form["orderdetailId"]));
+            return RedirectToAction("OrderResult", "Cart");
+        }
+        public IActionResult EditReview(int productid)
+        {
+            var user = HttpContext.Session.GetJson<User>("UserLogin");
+            var product = productRepository.GetProductById(productid);
+            var review = revewRepository.getReview(productid, user.UserId);
+            ViewBag.ReviewProduct = review;
+            ViewBag.totalProductRating33 = revewRepository.totalProductRating(productid);
+            ViewBag.totalReviewRating33 = revewRepository.totalReview(productid);
+            return View(product);
+        }
+        [HttpPost]
+        public IActionResult EditReview(IFormCollection form)
+        {
+            var newreview = new Review();
+            newreview.ReviewId = int.Parse(form["reviewId"]);
+            newreview.Comment = form["comment"];
+            newreview.Rating = int.Parse(form["rating"]);
+            revewRepository.updateReview(newreview);
+            return RedirectToAction("OrderResult", "Cart");
         }
     }
 }

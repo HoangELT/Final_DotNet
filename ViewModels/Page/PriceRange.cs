@@ -1,4 +1,4 @@
-﻿namespace Final_DotNet.Models.Page
+﻿namespace Final_DotNet.ViewModels.Page
 {
     public class PriceRange
     {

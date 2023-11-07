@@ -3,8 +3,11 @@
     Layout = "~/Views/Shared/Layout_Index/_Layout_Index.cshtml";
     var listcolor = ViewBag.Listcolor as List<Color>;
 }
-
 @model List<Product>
+@if (TempData["LoginSuccess"] != null)
+{
+    <div id="login-success-message">@TempData["LoginSuccess"]</div>
+}
 <!-- Carousel Start -->
 <div class="container-fluid mb-3">
     <div class="row px-xl-5">
@@ -20,9 +23,8 @@
                         <img class="position-absolute w-100 h-100" src="../templates/img/carousel-1.jpg" style="object-fit: cover;">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
-                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Men Fashion</h1>
-                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Buy Now</a>
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Mobile</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Final project of .Net technology subject at Ton Duc Thang University</p>
                             </div>
                         </div>
                     </div>
@@ -30,9 +32,8 @@
                         <img class="position-absolute w-100 h-100" src="../templates/img/carousel-2.jpg" style="object-fit: cover;">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
-                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Women Fashion</h1>
-                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Buy Now</a>
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Laptop</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Final project of .Net technology subject at Ton Duc Thang University</p>
                             </div>
                         </div>
                     </div>
@@ -40,9 +41,8 @@
                         <img class="position-absolute w-100 h-100" src="../templates/img/carousel-3.jpg" style="object-fit: cover;">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
-                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Kids Fashion</h1>
-                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Buy Now</a>
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">TV</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Final project of .Net technology subject at Ton Duc Thang University</p>
                             </div>
                         </div>
                     </div>
@@ -105,14 +105,6 @@
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>$@i.CurPrice</h5><h6 class="text-muted ml-2"><del>$@i.DisPrice</del></h6>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -122,64 +114,15 @@
 </div>
 <!-- Products End -->
 }
-<!-- Blogs Start -->
-<div class="container-fluid pt-5 pb-3">
-    <h2 class="section-title position-relative-1 text-uppercase mx-xl-5 mb-4" style="text-align:center;"><span class="bg-secondary pr-3">Blogs</span></h2>
-    <div class="row px-xl-5">
-        <div class="col-md-6">
-            <div class="product-offer mb-30" style="height: 300px;">
-                <img class="img-fluid" src="../templates/img/offer-1.jpg" alt="">
-                <div class="offer-text">
-                    <h6 class="text-white text-uppercase">Save 20%</h6>
-                    <h3 class="text-white mb-3">Special Offer</h3>
-                    <a href="" class="btn btn-primary">See More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="product-offer mb-30" style="height: 300px;">
-                <img class="img-fluid" src="../templates/img/offer-2.jpg" alt="">
-                <div class="offer-text">
-                    <h6 class="text-white text-uppercase">Save 20%</h6>
-                    <h3 class="text-white mb-3">Special Offer</h3>
-                    <a href="" class="btn btn-primary">See More</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (e) {
+            var loginSuccess= document.getElementById("login-success-message");
+            if (loginSuccess) {
+                alertify.set('notifier', 'position', 'top-right');
+                alertify.success(loginSuccess.textContent);
+                e.preventDefault();
+            }
+        });
+    </script>
 </div>
-<!-- Blogs End -->
-<!-- Vendor Start -->
-<div class="container-fluid py-5">
-    <div class="row px-xl-5">
-        <div class="col">
-            <div class="owl-carousel vendor-carousel">
-                <div class="bg-light p-4">
-                    <img src="../templates/img/vendor-1.jpg" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../templates/img/vendor-2.jpg" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../templates/img/vendor-3.jpg" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../templates/img/vendor-4.jpg" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../templates/img/vendor-5.jpg" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../templates/img/vendor-6.jpg" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../templates/img/vendor-7.jpg" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../templates/img/vendor-8.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Vendor End -->

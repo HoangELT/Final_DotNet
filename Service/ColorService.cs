@@ -20,25 +20,32 @@ namespace Final_DotNet.Service
             return colors;
         }
 
-        public void updateColor(Color color)
+        public bool updateColor(Color color)
         {
             var updatecolor = dbContext.Colors.Find(color.ColorId);
-            updatecolor.Name = color.Name;
-            dbContext.Colors.Update(updatecolor);
-            dbContext.SaveChanges();
+            if (updatecolor != null)
+            {
+                updatecolor.Name = color.Name;
+                dbContext.Colors.Update(updatecolor);
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
-        public void addColor(string name)
+        public bool addColor(string name)
         {
             var color = dbContext.Colors.FirstOrDefault(p => p.Name == name);
             if (color == null)
             {
                 dbContext.Colors.Add(new Color(name));
                 dbContext.SaveChanges();
+                return true;
             }
+            return false;
         }
 
-        public void deleteColor(int id)
+        public bool deleteColor(int id)
         {
 
             var color = dbContext.Colors.Find(id);
@@ -46,7 +53,19 @@ namespace Final_DotNet.Service
             {
                 dbContext.Colors.Remove(color);
                 dbContext.SaveChanges();
+                return true;
             }
+            return false;
+        }
+
+        public Color? getColorbyId(int id)
+        {
+            var color = dbContext.Colors.Find(id);
+            if(color != null)
+            {
+                return color;
+            }
+            return null;
         }
     }
 }

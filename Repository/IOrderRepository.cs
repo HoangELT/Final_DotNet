@@ -4,8 +4,8 @@ namespace Final_DotNet.Repository
 {
     public interface IOrderRepository
     {
-        public void addOrder(string status, double total, bool isReview, int userId, Cart cart);
-        public void removeOrder(int orderId);
+        public void addOrder(string status, double total, int userId, Cart cart);
+        public void updateOrderDetail(int orderdetailId);
         public List<Order> getAllOrder();
         public List<Order> getListOrderbyUserId(int userId);
         public List<OrderDetail> getListOrderDetail(int orderId);

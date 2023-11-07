@@ -15,9 +15,9 @@ namespace Final_DotNet.Service
         {
             this.dbContext = dbContext;
         }
-        public void addOrder(string status, double total, bool isReview, int userId, Cart cart)
+        public void addOrder(string status, double total, int userId, Cart cart)
         {
-            dbContext.Orders.Add(new Order(status, total, isReview, userId));
+            dbContext.Orders.Add(new Order(status, total, userId));
             dbContext.SaveChanges();
 
             int orderId = dbContext.Orders.OrderByDescending(p => p.OrderId).First().OrderId;
@@ -43,16 +43,6 @@ namespace Final_DotNet.Service
         }
 
         public List<OrderDetail> getListOrderDetail(int orderId) => dbContext.OrderDetails.Include(u=>u.Order).ThenInclude(t=>t.User).Include(p=>p.Product).Where(p=>p.OrderId==orderId).ToList();
-
-        public void removeOrder(int orderId)
-        {
-            var order = dbContext.Orders.FirstOrDefault(o => o.OrderId == orderId);
-            if(order != null)
-            {
-                dbContext.Orders.Remove(order);
-                dbContext.SaveChanges();
-            }
-        }
 
         public int TotalOrder()
         {
@@ -85,6 +75,20 @@ namespace Final_DotNet.Service
         {
             var listOrder = dbContext.Orders.Include(p=>p.User).Include(p=>p.Products).ThenInclude(p=>p.Product).Where(p=>p.UserId==userId).ToList();
             return listOrder;
+        }
+
+        public void updateOrderDetail(int orderdetailId)
+        {
+            var orderdetail = dbContext.OrderDetails.Find(orderdetailId);
+            orderdetail.isReview = true;
+            dbContext.OrderDetails.Update(orderdetail);
+            dbContext.SaveChanges();
+            //if (orderdetail != null )
+            //{
+            //    orderdetail.isReview = true;
+            //    dbContext.OrderDetails.Update(orderdetail);
+            //    dbContext.SaveChanges();
+            //}
         }
     }
 }

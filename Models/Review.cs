@@ -20,5 +20,13 @@ namespace Final_DotNet.Models
         public DateTime Create_at { get; set; } = DateTime.Now;
         public User? User { get; set;}
         public Product? Product { get; set; }
+
+        public Review(int userID, int productId, int rating, string comment) {
+            this.Comment = comment;
+            this.UserId = userID;
+            this.ProductId = productId;
+            this.Rating = rating;
+        }
+        public Review() { }
     }
 }

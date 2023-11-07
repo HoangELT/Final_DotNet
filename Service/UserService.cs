@@ -15,19 +15,23 @@ namespace Final_DotNet.Service
         }
         public User FindUserbyId(int id)
         {
-            var user = dbContext.Users.Find(id);
-            return user;
+            var user = dbContext.Users.Include(p=>p.Roles).Include(p=>p.Orders).Where(p=>p.UserId==id).FirstOrDefault();
+            if (user != null)
+            {
+                return user;
+            }
+            return null;
         }
 
         public List<User> GetAllUser()
         {
-            listusers = dbContext.Users.ToList();
+            listusers = dbContext.Users.Include(p=>p.Orders).ToList();
             return listusers;
         }
 
         public User Login(string username, string password)
         {
-            var user = dbContext.Users.FirstOrDefault(u => u.UserName.Equals(username.Trim()));
+            var user = dbContext.Users.FirstOrDefault(u => u.UserName.Equals(username.Trim()) || u.Email.Equals(username.Trim()));
             if (user != null)
             {
                 bool isPassword = BCrypt.Net.BCrypt.Verify(password.Trim(), user.Password);
@@ -58,6 +62,43 @@ namespace Final_DotNet.Service
         public int totalUser()
         {
             return dbContext.Users.Count(); ;
+        }
+
+        public User updateUser(User user)
+        {
+            var us = dbContext.Users.Find(user.UserId);
+            if (us != null)
+            {
+                us.Address = user.Address;
+                us.PhoneNumber = user.PhoneNumber;
+                us.FullName = user.FullName;
+                us.Email = user.Email;
+                us.UserName = user.UserName;
+                us.Gender = user.Gender;
+                dbContext.Users.Update(us);
+                dbContext.SaveChanges();
+                return us;
+            }
+            return null;
+        }
+
+        public void forgotPassword(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool changePassword(int userId, string oldpassword, string newpassword)
+        {
+            var user = dbContext.Users.Find(userId);
+            bool isPassword = BCrypt.Net.BCrypt.Verify(oldpassword.Trim(), user.Password);
+            if (user != null && isPassword)
+            {
+                user.Password = BCrypt.Net.BCrypt.HashPassword(newpassword);
+                dbContext.Users.Update(user);
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

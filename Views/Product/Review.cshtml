@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "Product Review";
+    Layout = "~/Views/Shared/Layout_Index/_Layout_Index.cshtml";
+    int totalreview = ViewBag.totalReviewRating22;
+    double totalproductrating = ViewBag.totalProductRating22;
+    int orderdetailId = ViewBag.OrderdetailId;
+}
+@model Product
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="/Home/Index">Home</a>
+                <span class="breadcrumb-item active">Product Review</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+@if (Model != null)
+{
+    <!-- Product Review Start -->
+    <div class="container-fluid pb-5">
+        <div class="row px-xl-5">
+            <div class="col-lg-5 mb-30">
+                <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner bg-light">
+                        <div class="carousel-item active">
+                            <img class="w-100 h-100" src="../templates/img/imgProduct/@Model.ImageUrl" alt="Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 h-auto mb-30">
+                <div class="h-100 bg-light p-30">
+                    <h2>@Model.Name</h2>
+                    <div class="d-flex mb-3">
+                     @if (totalproductrating > 0)
+                        {
+                            <div class="text-primary mr-2">
+                                @{
+                                    int numFullStars = (int)totalproductrating; // Số ngôi sao hoàn toàn đầy
+                                    int numHalfStar = (totalproductrating - numFullStars) >= 0.5 ? 1 : 0; // Số ngôi sao nửa
+                                    int numEmptyStars = 5 - numFullStars - numHalfStar; // Số ngôi sao rỗng
+                                }
+
+                                @for (int i = 1; i <= numFullStars; i++)
+                                {
+                                    <i class="fas fa-star text-warning" value="@i"></i>
+                                }
+
+                                @if (numHalfStar == 1)
+                                {
+                                    <i class="fas fa-star-half-alt text-warning" value="@numFullStars + 1"></i>
+                                }
+
+                                @for (int i = numFullStars + numHalfStar + 1; i <= 5; i++)
+                                {
+                                    <i class="far fa-star" value="@i"></i>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="text-primary mr-2">
+                                <i class="far fa-star" value="1"></i>
+                                <i class="far fa-star" value="2"></i>
+                                <i class="far fa-star" value="3"></i>
+                                <i class="far fa-star" value="4"></i>
+                                <i class="far fa-star" value="5"></i>
+                            </div>
+                        }
+                        <small class="pt-1">(@totalreview Reviews)</small>
+                    </div>
+                    <h3 class="font-weight-semi-bold mb-4">Price: $@Model.CurPrice</h3>
+                    <p class="mb-4">Description: @Model.Description</p>
+                    <div class="d-flex mb-3">
+                        <strong class="text-dark mr-3">Brand: @Model.Brand.Name</strong>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row px-xl-5">
+            <div class="col" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-content: stretch;justify-content: space-around;">
+                <div class="col-md-6">
+                    <h4 class="mb-4" style="text-align:center;">REVIEW PRODUCT</h4>
+                    <div class="d-flex my-3">
+                        <p class="mb-0 mr-2">Your Rating * :</p>
+                        <div class="text-primary">
+                            <i class="far fa-star" value="1"></i>
+                            <i class="far fa-star" value="2"></i>
+                            <i class="far fa-star" value="3"></i>
+                            <i class="far fa-star" value="4"></i>
+                            <i class="far fa-star" value="5"></i>
+                        </div>
+                    </div>
+                    <form action="/Product/Review" method="post">
+                        <input type="hidden" name="orderdetailId" value="@orderdetailId">
+                        <input type="hidden" name="productId" value="@Model.ProductId">
+                        <input type="hidden" id="rating" name="rating" value="getRating()">
+                        <div class="form-group">
+                            <label for="message">Your Review *</label>
+                            <textarea id="message" name="comment" cols="30" rows="5" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group mb-0">
+                            <input type="submit" value="Review" class="btn btn-primary px-3">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    <!-- Product Review End -->
+    <script>
+        // Lấy tất cả các sao có class "far fa-star"
+        var stars = document.querySelectorAll(".far.fa-star");
+        var ratingInput = document.getElementById("rating");
+        // Thêm sự kiện click vào các sao
+        stars.forEach(function (star) {
+            star.addEventListener("click", function () {
+                // Lấy giá trị (value) của sao
+                var rating = parseInt(star.getAttribute("value"));
+
+                // Tô màu tất cả các sao có giá trị từ 1 đến rating
+                stars.forEach(function (s) {
+                    var sValue = parseInt(s.getAttribute("value"));
+                    if (sValue <= rating) {
+                        s.classList.remove("far");
+                        s.classList.add("fas");
+                        s.classList.add("text-warning");
+                    } else {
+                        s.classList.remove("fas");
+                        s.classList.remove("text-warning");
+                        s.classList.add("far");
+                    }
+                });
+                ratingInput.value = rating;
+                // Lưu giá trị đánh giá ở đây (có thể gửi lên máy chủ sau này)
+                //console.log("Đánh giá: " + rating);
+                //console.log("Đánh giá value: " + ratingInput.value);
+            });
+        });
+        function getRating() {
+            return ratingInput.value;
+        }
+    </script>
+
+
+}

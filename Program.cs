@@ -21,12 +21,13 @@ namespace Final_DotNet
             builder.Services.AddScoped<ICategoryRepository, CategoryService>();
             builder.Services.AddScoped<IBrandRepository, BrandService>();
             builder.Services.AddScoped<IColorRepository, ColorService>();
-            builder.Services.AddScoped<IRoleRepository, RoleService>();
+            builder.Services.AddScoped<IUserRoleRepository, UserRoleService>();
             builder.Services.AddScoped<IOrderRepository, OrderService>();
+            builder.Services.AddScoped<IReviewRepository, ReviewService>();
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(100); // Set the desired session timeout.
+                options.IdleTimeout = TimeSpan.FromMinutes(1000); // Set the desired session timeout.
                 options.Cookie.HttpOnly = true; // Ensure the session cookie is HTTP only.
             });
 

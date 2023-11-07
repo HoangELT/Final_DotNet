@@ -1,5 +1,7 @@
 ﻿@{
     var totalitemCart = ViewBag.TotalitemCart;
+    bool islogin = ViewBag.isLogin;
+    bool isAdmin = ViewBag.isAdmin;
 }
 @model List<Category>
 <!-- Navbar Start -->
@@ -43,23 +45,35 @@
                                 }
                             </div>
                         </div>
-                        <a href="/Blog/AllBlog" class="nav-item nav-link">Blogs</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
-                            <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                <a href="/Cart/Index" class="dropdown-item">Shopping Cart</a>
-                                <a href="/Cart/Checkout" class="dropdown-item">Checkout</a>
-                            </div>
-                        </div>
                         <a href="/Product/AllProduct" class="nav-item nav-link">Shop</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                         <div class="btn-group">
                             <i class="fa fa-user text-primary dropdown-toggle" data-toggle="dropdown"></i>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a href="/Login/Index" class="dropdown-item">Login</a>
-                                <a href="/Register/Index" class="dropdown-item">Register</a>
-                            </div>
+                            @if (islogin && isAdmin)
+                            {
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="/Account/Information" class="dropdown-item">Information</a>
+                                    <a href="/Cart/OrderResult" class="dropdown-item">Order</a>
+                                    <a href="/Admin/Index" class="dropdown-item">Admin Dashboard</a>
+                                    <a href="/Account/Logout" class="dropdown-item">Logout</a>
+                                </div>
+                            }
+                            else if (islogin && !isAdmin)
+                            {
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="/Account/Information" class="dropdown-item">Information</a>
+                                    <a href="/Cart/OrderResult" class="dropdown-item">Order</a>
+                                    <a href="/Account/Logout" class="dropdown-item">Logout</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="/Account/Login" class="dropdown-item">Login</a>
+                                    <a href="/Account/Register" class="dropdown-item">Register</a>
+                                </div>
+                            }
                         </div>
                         <a href="/Cart/Index" class="btn px-0 ml-3">
                             <i class="fas fa-shopping-cart text-primary"></i>

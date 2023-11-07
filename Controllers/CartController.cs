@@ -64,7 +64,7 @@ namespace Final_DotNet.Controllers
             var cartOrder = HttpContext.Session.GetJson<Cart>("cart");
             if (user != null && cartOrder != null)
             {
-                orderRepository.addOrder("Ordered",cartOrder.calTotalPrice(),false, user.UserId,cartOrder);
+                orderRepository.addOrder("Ordered",cartOrder.calTotalPrice(), user.UserId,cartOrder);
                 HttpContext.Session.Remove("cart");
                 var listOrder =orderRepository.getListOrderbyUserId(user.UserId);
                 return View(listOrder);
@@ -75,9 +75,8 @@ namespace Final_DotNet.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Login", "Account");
             }
         }
-
     }
 }

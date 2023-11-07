@@ -12,7 +12,6 @@ namespace Final_DotNet.Models
         [MaxLength(50)]
         public string? Status { get; set; }
         public double Total { get; set; }
-        public bool isReview {  get; set; }
         public DateTime CreateAt { get; set; } = DateTime.Now;
         //khóa ngoại tới user
         [ForeignKey("User")]
@@ -21,11 +20,10 @@ namespace Final_DotNet.Models
 
         public ICollection<OrderDetail> Products { get; set; } = new HashSet<OrderDetail>();
 
-        public Order(string? status, double total, bool isReview, int userId)
+        public Order(string? status, double total, int userId)
         {
             Status = status;
             Total = total;
-            this.isReview = isReview;
             UserId = userId;
         }
         public Order() { }

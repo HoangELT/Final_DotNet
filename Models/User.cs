@@ -41,9 +41,6 @@ namespace Final_DotNet.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateCreate { get; set; } = DateTime.Now;
 
-
-        public ICollection<Blog> Blogs { get; set;} = new HashSet<Blog>();
-
         public ICollection<UserRole> Roles { get; set; } = new HashSet<UserRole>();
 
         public ICollection<Order> Orders {  get; set; } = new HashSet<Order>();

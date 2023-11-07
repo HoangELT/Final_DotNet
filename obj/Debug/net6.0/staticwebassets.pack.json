@@ -325,22 +325,6 @@
       "PackagePath": "staticwebassets\\templates\\img\\carousel-3.jpg"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\cat-1.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\cat-1.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\cat-2.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\cat-2.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\cat-3.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\cat-3.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\cat-4.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\cat-4.jpg"
-    },
-    {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\D3.jpg",
       "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\D3.jpg"
     },
@@ -421,48 +405,8 @@
       "PackagePath": "staticwebassets\\templates\\img\\imgUser\\user.jpg"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\offer-1.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\offer-1.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\offer-2.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\offer-2.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\payments.png",
-      "PackagePath": "staticwebassets\\templates\\img\\payments.png"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\vendor-1.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\vendor-1.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\vendor-2.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\vendor-2.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\vendor-3.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\vendor-3.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\vendor-4.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\vendor-4.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\vendor-5.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\vendor-5.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\vendor-6.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\vendor-6.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\vendor-7.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\vendor-7.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\vendor-8.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\vendor-8.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\img_user.png",
+      "PackagePath": "staticwebassets\\templates\\img\\img_user.png"
     },
     {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\js\\main.js",
@@ -523,18 +467,6 @@
     {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\owl.carousel.min.js",
       "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\owl.carousel.min.js"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\mail\\contact.js",
-      "PackagePath": "staticwebassets\\templates\\mail\\contact.js"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\mail\\contact.php",
-      "PackagePath": "staticwebassets\\templates\\mail\\contact.php"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\mail\\jqBootstrapValidation.min.js",
-      "PackagePath": "staticwebassets\\templates\\mail\\jqBootstrapValidation.min.js"
     },
     {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_alert.scss",

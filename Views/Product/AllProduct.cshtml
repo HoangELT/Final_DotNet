@@ -1,10 +1,10 @@
-﻿@using Final_DotNet.Models.Page;
+﻿@using Final_DotNet.ViewModels.Page;
 @{
     ViewData["Title"] = "List all product";
     Layout = "~/Views/Shared/Layout_Index/_Layout_Index.cshtml";
     var listcolor = ViewBag.ListColor as List<Color>;
     var lisbrand = ViewBag.ListBand as List<Brand>;
-    var listproductcolor = ViewBag.ListcolorProducts as List<Color>;
+    var listproductcolor = ViewBag.colorProducts as List<Color>;
 }
 @model ProductListView
 <!-- Breadcrumb Start -->
@@ -140,14 +140,6 @@
                                     <a class="h6 text-decoration-none text-truncate" href="">@i.Name</a>
                                     <div class="d-flex align-items-center justify-content-center mt-2">
                                         <h5>$@i.CurPrice</h5><h6 class="text-muted ml-2"><del>$@i.DisPrice</del></h6>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-center mb-1">
-                                        <small class="fa fa-star text-primary mr-1"></small>
-                                        <small class="fa fa-star text-primary mr-1"></small>
-                                        <small class="fa fa-star text-primary mr-1"></small>
-                                        <small class="fa fa-star text-primary mr-1"></small>
-                                        <small class="fa fa-star text-primary mr-1"></small>
-                                        <small>(99)</small>
                                     </div>
                                 </div>
                             </div>

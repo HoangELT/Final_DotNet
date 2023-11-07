@@ -49,7 +49,7 @@
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0">@i.Address</p>
                                         </td>
-                                    <td class="align-middle text-center text-sm">10</td>
+                                    <td class="align-middle text-center text-sm">@i.Orders.Count()</td>
                                     <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">@Convert.ToDateTime(i.DateCreate).ToString("dd/MM/yyyy") </span>
                                     </td>

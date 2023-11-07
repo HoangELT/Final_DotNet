@@ -5,8 +5,9 @@ namespace Final_DotNet.Repository
     public interface IColorRepository
     {
         public List<Color> getAllColor();
-        public void updateColor(Color color);
-        public void addColor(string name);
-        public void deleteColor(int id);
+        public bool updateColor(Color color);
+        public bool addColor(string name);
+        public bool deleteColor(int id);
+        public Color getColorbyId(int id);
     }
 }

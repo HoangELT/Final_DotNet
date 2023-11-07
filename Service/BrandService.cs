@@ -24,25 +24,32 @@ namespace Final_DotNet.Service
             return brand;
         }
 
-        public void updateBrand(Brand brand)
+        public bool updateBrand(Brand brand)
         {
             var updatebrand = GetBrandById(brand.BrandId);
-            updatebrand.Name = brand.Name;
-            dbContext.Brands.Update(updatebrand);
-            dbContext.SaveChanges();
+            if (updatebrand != null)
+            {
+                updatebrand.Name = brand.Name;
+                dbContext.Brands.Update(updatebrand);
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
-        public void addBrand(string name)
+        public bool addBrand(string name)
         {
             var brand = dbContext.Brands.FirstOrDefault(p => p.Name == name);
             if(brand == null)
             {
                 dbContext.Brands.Add(new Brand(name));
                 dbContext.SaveChanges();
+                return true;
             }
+            return false;
         }
 
-        public void deleteBrand(int id)
+        public bool deleteBrand(int id)
         {
 
             var brand = dbContext.Brands.Find(id);
@@ -50,7 +57,9 @@ namespace Final_DotNet.Service
             {
                 dbContext.Brands.Remove(brand);
                 dbContext.SaveChanges();
+                return true;
             }
+            return false;
         }
     }
 }

@@ -8,18 +8,14 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
 </head>
 <body>
-@*     <!--Start hide notification-->
-    @if (TempData["Register"] != null)
+    @if (TempData["LoginFailed"] != null)
     {
-        <div id="notification" style="display:none;">
-            
-        </div>
-    } *@
-    
+        <div id="login-failed-message" data-login-failed="@TempData["LoginFailed"]"></div>
+    }
     <div class="container">
         <div class="title">LOGIN</div>
         <div class="content">
-            <form action="/Login/Index" method="post" id="login-account">
+            <form action="/Account/Login" method="post" id="login-account">
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Username</span>
@@ -36,22 +32,28 @@
                     <input type="submit" value="LOGIN">
                 </div>
                 <div style="text-align:right; margin-bottom:30px">
-                    <a href="/Register/Index">Forgot password?</a>
+                    <a href="/Account/ForgotPassword">Forgot password?</a>
                 </div>
                 <div style="text-align:center">
                     <span>Don't have an account? </span>
-                    <a href="/Register/Index">Register</a>
+                    <a href="/Account/Register">Register</a>
                 </div>
             </form>
         </div>
     </div>
     @RenderBody()
-@*     <script>
-        document.getElementById("login-account").addEventListener('submit', function (e) {
-            alertify.set('notifier', 'position', 'top-right');
-            alertify.success('Đăng ký thành công!');
-        })
-    </script> *@
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (e) {
+            var loginFailed = document.getElementById("login-failed-message");
+            if (loginFailed) {
+                var data = loginFailed.getAttribute("data-login-failed");
+                alertify.set('notifier', 'position', 'top-right');
+                alertify.success(data);
+                e.preventDefault();
+            }
+        });
+    </script>
+
 </body>
 </html>

@@ -22,52 +22,6 @@ namespace Final_DotNet.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Final_DotNet.Models.Blog", b =>
-                {
-                    b.Property<int>("BlogId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BlogId"));
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasMaxLength(50000)
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasMaxLength(50000)
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SmallContent")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BlogId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Blogs");
-                });
-
             modelBuilder.Entity("Final_DotNet.Models.Brand", b =>
                 {
                     b.Property<int>("BrandId")
@@ -149,9 +103,6 @@ namespace Final_DotNet.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("isReview")
-                        .HasColumnType("bit");
-
                     b.HasKey("OrderId");
 
                     b.HasIndex("UserId");
@@ -180,6 +131,9 @@ namespace Final_DotNet.Migrations
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
+
+                    b.Property<bool>("isReview")
+                        .HasColumnType("bit");
 
                     b.HasKey("OrderDetailId");
 
@@ -380,17 +334,6 @@ namespace Final_DotNet.Migrations
                     b.ToTable("UserRoles");
                 });
 
-            modelBuilder.Entity("Final_DotNet.Models.Blog", b =>
-                {
-                    b.HasOne("Final_DotNet.Models.User", "User")
-                        .WithMany("Blogs")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Final_DotNet.Models.Order", b =>
                 {
                     b.HasOne("Final_DotNet.Models.User", "User")
@@ -529,8 +472,6 @@ namespace Final_DotNet.Migrations
 
             modelBuilder.Entity("Final_DotNet.Models.User", b =>
                 {
-                    b.Navigation("Blogs");
-
                     b.Navigation("Orders");
 
                     b.Navigation("ProductReviews");

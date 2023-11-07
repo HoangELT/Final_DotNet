@@ -3,6 +3,30 @@
     Layout = "~/Views/Shared/Layout_Admin/_Layout_Admin.cshtml";
 }
 @model List<Brand>
+@if (TempData["DeleteBrandSuccess"] != null)
+{
+    <div id="delete-success-message" delete-success="@TempData["DeleteBrandSuccess"]"></div>
+}
+@if (TempData["DeleteBrandFailed"] != null)
+{
+    <div id="delete-failed-message" delete-failed="@TempData["DeleteBrandFailed"]"></div>
+}
+@if (TempData["EditBrandSuccess"] != null)
+{
+    <div id="update-success-message" update-success="@TempData["EditBrandSuccess"]"></div>
+}
+@if (TempData["EditBrandFailed"] != null)
+{
+    <div id="update-failed-message" update-failed="@TempData["EditBrandFailed"]"></div>
+}
+@if (TempData["AddBrandSuccess"] != null)
+{
+    <div id="add-success-message" add-success="@TempData["AddBrandSuccess"]"></div>
+}
+@if (TempData["AddBrandFailed"] != null)
+{
+    <div id="add-failed-message" add-failed="@TempData["AddBrandFailed"]"></div>
+}
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
@@ -31,8 +55,7 @@
                                     </td>
                                     <td>
                                         <form action="/Admin/DeleteBrand?BrandId=@i.BrandId" method="POST">
-                                            <input type="hidden" name="brand_id">
-                                            <button type="submit" name="delete_category_btn" class="btn btn-danger">Delete</button>
+                                            <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -44,3 +67,46 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function (e) {
+        var deleteSuccessMessage = document.getElementById("delete-success-message").getAttribute("delete-success");
+        var deleteFailedMessage = document.getElementById("delete-failed-message").getAttribute("delete-failed");
+        var updateSuccessMessage = document.getElementById("update-success-message").getAttribute("update-success");
+        var updateFailedMessage = document.getElementById("update-failed-message").getAttribute("update-failed");
+        var addSuccessMessage = document.getElementById("add-success-message").getAttribute("add-success");
+        var addFailedMessage = document.getElementById("add-failed-message").getAttribute("add-failed");
+
+        if (deleteSuccessMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.success(deleteSuccessMessage);
+            e.preventDefault();
+        }
+        if (deleteFailedMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.error(deleteFailedMessage);
+            e.preventDefault();
+        }
+        if (updateSuccessMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.success(updateSuccessMessage);
+            e.preventDefault();
+        }
+
+        if (updateFailedMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.error(updateFailedMessage);
+            e.preventDefault();
+        }
+        if (addSuccessMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.success(addSuccessMessage);
+            e.preventDefault();
+        }
+
+        if (addFailedMessage) {
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.error(addFailedMessage);
+            e.preventDefault();
+        }
+    });
+</script>

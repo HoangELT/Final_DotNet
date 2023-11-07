@@ -15,22 +15,30 @@ namespace Final_DotNet.Service
             _dbContext = dbContext;
         }
 
-        public void addCategory(string name, string description)
+        public bool addCategory(string name, string description)
         {
-            _dbContext.Categories.Add(new Category(name, description));
-            _dbContext.SaveChanges();      
+            var brand = _dbContext.Categories.FirstOrDefault(p => p.Name == name);
+            if(brand == null)
+            {
+                _dbContext.Categories.Add(new Category(name, description));
+                _dbContext.SaveChanges();
+                return true;
+            }
+            return false;     
         }
 
-        public void deleteCategory(int categoryId)
+        public bool deleteCategory(int categoryId)
         {
             var cate = _dbContext.Categories.Find(categoryId);
             if(cate != null)
             {
                 _dbContext.Categories.Remove(cate);
                 _dbContext.SaveChanges();
+                return true;
             }
+            return false;
         }
-        public void updateCategory(Category category)
+        public bool updateCategory(Category category)
         {
             foreach(var cate in _dbContext.Categories.ToList())
             {
@@ -40,8 +48,10 @@ namespace Final_DotNet.Service
                     cate.Name = category.Name;
                     _dbContext.Categories.Update(cate);
                     _dbContext.SaveChanges();
+                    return true;
                 }
             }
+            return false;
         }
 
         public List<Category> getAllCategories()
@@ -54,6 +64,16 @@ namespace Final_DotNet.Service
         {
             List<Product> listpro = _dbContext.Products.Include(p => p.Category).Where(x => x.Category.Name.Equals(name)).ToList();
             return listpro;
+        }
+
+        public Category? getCategorybyId(int categoryId)
+        {
+            var cate = _dbContext.Categories.Find(categoryId);
+            if(cate != null)
+            {
+                return cate;
+            }
+            return null;
         }
     }
 }
