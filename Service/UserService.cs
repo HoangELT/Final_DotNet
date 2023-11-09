@@ -82,9 +82,26 @@ namespace Final_DotNet.Service
             return null;
         }
 
-        public void forgotPassword(User user)
+        public bool forgotPassword(int userId, string newpassword)
         {
-            throw new NotImplementedException();
+            var us = dbContext.Users.Where(p=>p.UserId== userId).FirstOrDefault();
+            if(us != null)
+            {
+                us.Password = BCrypt.Net.BCrypt.HashPassword(newpassword);
+                dbContext.Update(us);
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public User sendEmail(string email)
+        {
+            var user = dbContext.Users.Where(p => p.Email.Equals(email)).FirstOrDefault();
+            if (user != null)
+            {
+                return user;
+            }
+            return null;
         }
 
         public bool changePassword(int userId, string oldpassword, string newpassword)

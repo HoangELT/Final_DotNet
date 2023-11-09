@@ -40,7 +40,8 @@ namespace Final_DotNet
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("StoreDbContext"));
             });
-
+            //send email to customer
+            builder.Services.AddSingleton(new EmailService("smtp.gmail.com", 587, "electricstore11112023@gmail.com", "ohjh uwfh ycrc qivu"));
             var app = builder.Build();
 
 			// Configure the HTTP request pipeline.

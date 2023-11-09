@@ -1,7 +1,11 @@
 ﻿using Final_DotNet.Infrastructure;
 using Final_DotNet.Models;
 using Final_DotNet.Repository;
+using Final_DotNet.Service.Auth;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using static System.Net.WebRequestMethods;
 
 namespace Final_DotNet.Controllers
 {
@@ -9,10 +13,14 @@ namespace Final_DotNet.Controllers
     {
         private readonly IUserRepository userRepo;
         private readonly IUserRoleRepository userroleRepo;
-        public AccountController(IUserRepository IuserRepo, IUserRoleRepository IuserroleRepo)
+        private readonly EmailService emailService;
+        private readonly ILogger<AccountController> logger;
+        public AccountController(ILogger<AccountController> logger,EmailService emailService, IUserRepository IuserRepo, IUserRoleRepository IuserroleRepo)
         {
             userRepo = IuserRepo;
             userroleRepo = IuserroleRepo;
+            this.emailService = emailService;
+            this.logger= logger;
         }
         public IActionResult Login()
         {
@@ -89,7 +97,7 @@ namespace Final_DotNet.Controllers
             if (form["newPassword"].Equals(form["confirmNewPassword"]))
             {
                 var isSuccess = userRepo.changePassword(int.Parse(form["userid"]), form["currentPassword"], form["newPassword"]);
-                if(isSuccess)
+                if (isSuccess)
                 {
                     TempData["ChangePasswordSuccess"] = "Change password successfully";
                     return RedirectToAction("Information");
@@ -107,6 +115,76 @@ namespace Final_DotNet.Controllers
         {
             HttpContext.Session.Remove("UserLogin");
             return RedirectToAction("Index", "Home");
+        }
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ForgotPassword(IFormCollection form)
+        {
+            if (form["password"].Equals(form["Cpassword"]))
+            {
+                var issuccess = userRepo.forgotPassword(int.Parse(form["userid"]), form["password"]);
+                if (issuccess)
+                {
+                    TempData["ForgotPasswordSuccess"] = "Change password successfully";
+                    return RedirectToAction("Login");
+                }
+            }
+            TempData["PasswordNotSameCpassword"] = "The new password is not the same as the confirmation password";
+            return View();
+        }
+        public IActionResult SendEmail()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> SendEmail(IFormCollection form)
+        {
+            User userF = userRepo.sendEmail(form["email"]);
+            logger.LogInformation("haaaaaaaaaaaaaaaaaaaa" + userF.Email);
+            if (userF != null)
+            {
+                TempData["USERID"] = userF.UserId;
+                try
+                {
+                    var toEmail = userF.Email;
+                    var VerificationCodeSent = emailService.GenerateVerificationCode();
+                    logger.LogInformation("asdasdddddddddd" + VerificationCodeSent);
+                    HttpContext.Session.SetString("VerificationCodeSent", VerificationCodeSent);
+
+                    await emailService.SendEmailAsync(toEmail, VerificationCodeSent);
+                    return RedirectToAction("VerifyCodeSend");
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý khi gửi email thất bại
+                    return NotFound("ErrorView" + ex.Message);
+                }
+            }
+            return NotFound("Email is not correct");
+        }
+        public IActionResult VerifyCodeSend()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult VerifyCodeSend(IFormCollection form)
+        {
+            string verifycode = HttpContext.Session.GetString("VerificationCodeSent");
+            if (verifycode != null)
+            {
+                TempData["userId"] = int.Parse(form["userid"]);
+                if (verifycode.Equals(form["verifycode"]))
+                {
+                    HttpContext.Session.Remove("VerificationCodeSent");
+                    return RedirectToAction("ForgotPassword");
+                }
+                return NotFound("Email is not correct");
+            }
+            return NotFound("Email is not correct");
         }
     }
 }
