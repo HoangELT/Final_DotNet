@@ -1,7 +1,11 @@
 ﻿
 @model List<Product>
-@if (Model != null)
+@if (Model != null && Model.Count>0)
 {
+    <div class="col-12 pb-1">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+        </div>
+    </div>
     @foreach (var i in Model)
     {
         <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
@@ -18,14 +22,6 @@
                     <div class="d-flex align-items-center justify-content-center mt-2">
                         <h5>$@i.CurPrice</h5><h6 class="text-muted ml-2"><del>$@i.DisPrice</del></h6>
                     </div>
-                    <div class="d-flex align-items-center justify-content-center mb-1">
-                        <small class="fa fa-star text-primary mr-1"></small>
-                        <small class="fa fa-star text-primary mr-1"></small>
-                        <small class="fa fa-star text-primary mr-1"></small>
-                        <small class="fa fa-star text-primary mr-1"></small>
-                        <small class="fa fa-star text-primary mr-1"></small>
-                        <small>(99)</small>
-                    </div>
                 </div>
             </div>
         </div>
@@ -34,5 +30,5 @@
 }
 else
 {
-    <h1>Not Found</h1>
+    <h1>Not Product Contains by Filter!</h1>
 }

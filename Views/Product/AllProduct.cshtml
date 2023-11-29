@@ -31,32 +31,26 @@
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" value="all" checked id="price-all">
                         <label class="custom-control-label" for="price-all">All Price</label>
-                        <span class="badge border font-weight-normal">1000</span>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" value="0-1000" id="price-1">
                         <label class="custom-control-label" for="price-1">$0 - $1000</label>
-                        <span class="badge border font-weight-normal">150</span>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" value="1000-2000" id="price-2">
                         <label class="custom-control-label" for="price-2">$1000 - $2000</label>
-                        <span class="badge border font-weight-normal">295</span>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" value="2000-3000" id="price-3">
                         <label class="custom-control-label" for="price-3">$2000 - $3000</label>
-                        <span class="badge border font-weight-normal">246</span>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" value="3000-4000" id="price-4">
                         <label class="custom-control-label" for="price-4" >$3000 - $4000</label>
-                        <span class="badge border font-weight-normal">145</span>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" value="4000-5000" id="price-5">
                         <label class="custom-control-label" for="price-5" >$4000 - $5000</label>
-                        <span class="badge border font-weight-normal">168</span>
                     </div>
                 </form>
             </div>
@@ -68,7 +62,6 @@
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" value="all" checked id="color-all">
                         <label class="custom-control-label" for="color-all">All Color</label>
-                        <span class="badge border font-weight-normal">1000</span>
                     </div>
                     @if(listcolor != null)
                     {
@@ -78,7 +71,6 @@
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" class="custom-control-input" value="@i.ColorId" id="color-@index">
                                 <label class="custom-control-label" for="color-@index">@i.Name</label>
-                                <span class="badge border font-weight-normal">150</span>
                             </div>
                             index++;
                         }
@@ -93,7 +85,6 @@
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" value="all" checked id="brand-all">
                         <label class="custom-control-label" for="brand-all">All Brand</label>
-                        <span class="badge border font-weight-normal">1000</span>
                     </div>
                     @if (lisbrand != null)
                     {
@@ -103,7 +94,6 @@
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" class="custom-control-input" value="@i.Name" id="brand-@index">
                                 <label class="custom-control-label" for="brand-@index">@i.Name</label>
-                                <span class="badge border font-weight-normal">150</span>
                             </div>
                             index++;
                         }
@@ -127,7 +117,7 @@
                     var position = 0;
                     foreach (var i in Model.Products)
                     {
-                        <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                        <div id="productitem" class="col-lg-4 col-md-6 col-sm-6 pb-1">
                             <div class="product-item bg-light mb-4">
                                 <div class="product-img position-relative overflow-hidden">
                                     <img class="img-fluid w-100" src="../templates/img/imgProduct/@i.ImageUrl" alt="">
@@ -149,20 +139,20 @@
                     <div class="col-12">
                         <nav>
                             <ul class="pagination justify-content-center">
-                                @if (Model.PaginInfo.CurrentPage > 1)
+             @*                    @if (Model.PaginInfo.CurrentPage > 1)
                                 {
                                     <li class="page-item"><a class="page-link" href="/Product/AllProduct?page=@(Model.PaginInfo.CurrentPage - 1)">Previous</a></li>
-                                }
+                                } *@
 
                                 @for (int i = 1; i <= Model.PaginInfo.TotalPage; i++)
                                 {
                                     <li class="page-item"><a class="page-link" href="/Product/AllProduct?page=@i">@i</a></li>
                                 }
-
+@* 
                                 @if (Model.PaginInfo.CurrentPage < Model.PaginInfo.TotalPage)
                                 {
                                     <li class="page-item"><a class="page-link" href="/Product/AllProduct?page=@(Model.PaginInfo.CurrentPage + 1)">Next</a></li>
-                                }
+                                } *@
                             </ul>
                         </nav>
                     </div>
@@ -203,9 +193,10 @@
             }
         }).then(function (result) {
             $("#result-filter").html(result);
-            var TotalItems = document.querySelectorAll(".col-lg-4");
+            var TotalItems = document.querySelectorAll(".col-lg-4.col-md-6.col-sm-6.pb-1");
             var PageSize = 9;
             var TotalPages = Math.ceil(TotalItems.length / PageSize);
+            console.log("ádasdsad" + TotalPages);
             const div = document.createElement("div");
             div.classList.add("col-12");
             const nav = document.createElement("nav");
@@ -220,7 +211,7 @@
                 var a = document.createElement("a");
                 a.classList.add("page-link");
                 a.innerHTML = i;
-                a.addEventListener('click', handClickPage)
+                a.addEventListener("click", handClickPage)
                 a.setAttribute("href", "#");
                 li.appendChild(a);
                 ul.appendChild(li);
@@ -237,17 +228,16 @@
 
     function handClickPage(event){
         event.prevenDefault();
-
         var pageNumber = parseInt(event.target.textContent);
         Showpage(pageNumber);
     }
     function Showpage(pageNumber){
-        var productItems = document.querySelectorAll(".col-lg-4");
+        var productItems = document.querySelectorAll(".col-lg-4.col-md-6.col-sm-6.pb-1");
         var itemPerPage = 9;
         var startIndex = (pageNumber - 1) * itemPerPage;
         var endIndex = startIndex + itemPerPage;
 
-        for (var i = 0; i < productItems.length;i++){
+        for (var i = 1; i <= productItems.length;i++){
             if(i > startIndex && i < endIndex){
                 productItems[i].style.display = 'block';
             }else{

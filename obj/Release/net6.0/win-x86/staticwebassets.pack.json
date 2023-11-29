@@ -1,0 +1,849 @@
+{
+  "Files": [
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\css\\form.css",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\css\\form.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\css\\material-dashboard.min.css",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\css\\material-dashboard.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\StringConvertToSlug.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\StringConvertToSlug.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\jquery-3.6.0.min.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\jquery-3.6.0.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\perfect-scrollbar.min.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\perfect-scrollbar.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\smooth-scrollbar.min.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\smooth-scrollbar.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\admin\\assets\\js\\tinymce.min.js",
+      "PackagePath": "staticwebassets\\templates\\admin\\assets\\js\\tinymce.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\templates\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\templates\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\templates\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\templates\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\templates\\css\\bootstrap.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\templates\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\login\\style_login.css",
+      "PackagePath": "staticwebassets\\templates\\css\\login\\style_login.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\register\\style_register.css",
+      "PackagePath": "staticwebassets\\templates\\css\\register\\style_register.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\style.css",
+      "PackagePath": "staticwebassets\\templates\\css\\style.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\templates\\css\\style.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-4.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\carousel-4.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-5.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\carousel-5.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-6.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\carousel-6.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-7.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\carousel-7.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-8.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\carousel-8.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\ipad-air-5-m1-2022.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\ipad-air-5-m1-2022.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\iphone-14-promax-128gb.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\iphone-14-promax-128gb.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\iphone-14-promax.jfif",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\iphone-14-promax.jfif"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\iphone-15-pro.jfif",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\iphone-15-pro.jfif"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\iphone-15.jfif",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\iphone-15.jfif"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\laptop-acer-aspire-7.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\laptop-acer-aspire-7.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\laptop-asus-vivobook-pro.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\laptop-asus-vivobook-pro.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\laptop-dell-inspiron-t7430.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\laptop-dell-inspiron-t7430.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\macbook-air-m1-256gb.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\macbook-air-m1-256gb.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\macbook-pro-2022-256gb.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\macbook-pro-2022-256gb.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\pc-asus-m5401wu.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\pc-asus-m5401wu.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\pc-hp-proone-200-g6.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\pc-hp-proone-200-g6.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\samsung-galaxy-s23-8gb-256gb.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\samsung-galaxy-s23-8gb-256gb.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\samsung-galaxy-s23-ultra.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\samsung-galaxy-s23-ultra.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-Uhd.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-Uhd.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-crystal-Uhd.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-crystal-Uhd.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-qled.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-qled.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\img_user.png",
+      "PackagePath": "staticwebassets\\templates\\img\\img_user.png"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\js\\main.js",
+      "PackagePath": "staticwebassets\\templates\\js\\main.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\animate\\animate.min.css",
+      "PackagePath": "staticwebassets\\templates\\lib\\animate\\animate.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\templates\\lib\\easing\\easing.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\templates\\lib\\easing\\easing.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\LICENSE",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\assets\\ajax-loader.gif"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\assets\\owl.carousel.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\assets\\owl.theme.default.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\assets\\owl.theme.green.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\assets\\owl.video.play.png"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\owl.carousel.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\lib\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\templates\\lib\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_alert.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_alert.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_badge.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_badge.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_breadcrumb.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_button-group.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_button-group.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_buttons.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_buttons.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_card.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_card.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_carousel.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_carousel.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_close.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_close.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_code.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_code.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_custom-forms.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_custom-forms.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_dropdown.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_forms.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_forms.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_functions.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_grid.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_grid.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_images.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_images.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_input-group.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_input-group.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_jumbotron.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_jumbotron.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_list-group.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_list-group.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_media.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_media.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_modal.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_modal.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_nav.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_nav.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_pagination.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_pagination.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_popover.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_popover.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_print.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_print.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_progress.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_progress.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_reboot.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_reboot.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_root.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_root.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_spinners.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_spinners.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_tables.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_tables.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_toasts.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_toasts.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_tooltip.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_transitions.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_transitions.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_type.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_type.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\_variables.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_float.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_float.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_image.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_size.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_size.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_table-row.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_table-row.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\mixins\\_visibility.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\mixins\\_visibility.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_align.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_align.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_background.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_background.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_borders.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_borders.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_display.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_display.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_embed.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_embed.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_flex.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_flex.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_float.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_float.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_interactions.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_interactions.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_overflow.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_overflow.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_position.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_position.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_shadows.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_shadows.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_sizing.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_sizing.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_spacing.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_spacing.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_text.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_text.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\utilities\\_visibility.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\utilities\\_visibility.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\templates\\scss\\style.scss"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\win-x86\\staticwebassets\\msbuild.Final_DotNet.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\win-x86\\staticwebassets\\msbuild.build.Final_DotNet.props",
+      "PackagePath": "build\\Final_DotNet.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\win-x86\\staticwebassets\\msbuild.buildMultiTargeting.Final_DotNet.props",
+      "PackagePath": "buildMultiTargeting\\Final_DotNet.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\win-x86\\staticwebassets\\msbuild.buildTransitive.Final_DotNet.props",
+      "PackagePath": "buildTransitive\\Final_DotNet.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

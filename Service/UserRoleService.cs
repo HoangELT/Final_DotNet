@@ -28,11 +28,11 @@ namespace Final_DotNet.Service
 
         public void updateRoleUser(int userId, int RoleId)
         {
-            var userRole = dbContext.UserRoles.Where(x => x.UserId == userId).Select(x => x).ToList();
-            foreach(var role in userRole)
+            var userRole = dbContext.UserRoles.Where(x => x.UserId == userId).FirstOrDefault();
+            if(userRole!=null)
             {
-                role.RoleId = RoleId;
-                dbContext.UserRoles.Update(role);
+                userRole.RoleId = RoleId;
+                dbContext.UserRoles.Update(userRole);
                 dbContext.SaveChanges();
             }
             

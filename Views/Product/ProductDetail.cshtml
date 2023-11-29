@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/Layout_Index/_Layout_Index.cshtml";
     var listcolor = ViewBag.listcolor as List<Color>;
     var listallpro = ViewBag.listAllproduct as List<Product>;
+    var listcolorofproduct = ViewBag.colorOfProduct as List<Color>;
     var reviews = ViewBag.AllReviews as List<Review>;
     int totalReviewRating = ViewBag.totalReviewRating;
     double totalProductRating = ViewBag.totalProductRating;
@@ -222,13 +223,14 @@
             <div class="owl-carousel related-carousel">
                 @if(listallpro != null)
                 {
+                    var position = 0;
                     @foreach (var i in listallpro)
                     {
                         <div class="product-item bg-light">
                             <div class="product-img position-relative overflow-hidden">
                                 <img class="img-fluid w-100" src="../templates/img/imgProduct/@i.ImageUrl" alt="Image">
                                 <div class="product-action">
-                                    <a class="btn btn-outline-dark btn-square" href="/Cart/Index"><i class="fa fa-shopping-cart"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href="/Cart/addToCart?ProductId=@i.ProductId&Quantity=1&Color=@listcolorofproduct[position].Name"><i class="fa fa-shopping-cart"></i></a>
                                     <a class="btn btn-outline-dark btn-square" href="/Product/ProductDetail?ProductId=@i.ProductId"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
@@ -239,6 +241,7 @@
                                 </div>
                             </div>
                         </div>
+                        position++;
                     }
                 }
             </div>

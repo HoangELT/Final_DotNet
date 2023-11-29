@@ -18,6 +18,6 @@ function convertToSlug(Text) {
     .replace(/[^\w-]+/g, "");
 }
 
-document.getElementById("full-name").addEventListener("keyup", function(){
-    document.getElementById("slug-name").value = convertToSlug(document.getElementById("full-name").value);
-})
+//document.getElementById("full-name").addEventListener("keyup", function(){
+//    document.getElementById("slug-name").value = convertToSlug(document.getElementById("full-name").value);
+//})

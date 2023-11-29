@@ -313,24 +313,32 @@
       "PackagePath": "staticwebassets\\templates\\css\\style.min.css"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-1.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\carousel-1.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-4.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\carousel-4.jpg"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-2.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\carousel-2.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-5.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\carousel-5.jpg"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-3.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\carousel-3.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-6.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\carousel-6.jpg"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\D3.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\D3.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-7.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\carousel-7.jpg"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\OIP.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\OIP.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\carousel-8.jpg",
+      "PackagePath": "staticwebassets\\templates\\img\\carousel-8.jpg"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\ipad-air-5-m1-2022.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\ipad-air-5-m1-2022.webp"
+    },
+    {
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\iphone-14-promax-128gb.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\iphone-14-promax-128gb.webp"
     },
     {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\iphone-14-promax.jfif",
@@ -349,60 +357,48 @@
       "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\laptop-acer-aspire-7.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\ne1.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\ne1.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\laptop-asus-vivobook-pro.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\laptop-asus-vivobook-pro.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\nên.png",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\nên.png"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\laptop-dell-inspiron-t7430.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\laptop-dell-inspiron-t7430.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-1.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-1.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\macbook-air-m1-256gb.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\macbook-air-m1-256gb.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-2.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-2.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\macbook-pro-2022-256gb.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\macbook-pro-2022-256gb.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-3.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-3.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\pc-asus-m5401wu.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\pc-asus-m5401wu.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-4.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-4.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\pc-hp-proone-200-g6.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\pc-hp-proone-200-g6.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-5.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-5.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\samsung-galaxy-s23-8gb-256gb.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\samsung-galaxy-s23-8gb-256gb.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-6.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-6.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\samsung-galaxy-s23-ultra.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\samsung-galaxy-s23-ultra.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-7.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-7.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-Uhd.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-Uhd.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-8.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-8.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-crystal-Uhd.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-crystal-Uhd.webp"
     },
     {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\product-9.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\product-9.jpg"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\tai nghe.webp",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\tai nghe.webp"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\tv-samsung-qa85q70c.webp",
-      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\tv-samsung-qa85q70c.webp"
-    },
-    {
-      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgUser\\user.jpg",
-      "PackagePath": "staticwebassets\\templates\\img\\imgUser\\user.jpg"
+      "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-qled.webp",
+      "PackagePath": "staticwebassets\\templates\\img\\imgProduct\\smart-tivi-samsung-4k-qled.webp"
     },
     {
       "Id": "G:\\DotNet_BT\\Final_DotNet\\Final_DotNet\\wwwroot\\templates\\img\\img_user.png",

@@ -68,15 +68,17 @@ namespace Final_DotNet.Controllers
                 HttpContext.Session.Remove("cart");
                 var listOrder =orderRepository.getListOrderbyUserId(user.UserId);
                 return View(listOrder);
-            }else if (user != null)
-            {
-                var listOrder = orderRepository.getListOrderbyUserId(user.UserId);
-                return View(listOrder);
             }
             else
             {
                 return RedirectToAction("Login", "Account");
             }
+        }
+        public IActionResult OrderDetail()
+        {
+            var user = HttpContext.Session.GetJson<User>("UserLogin");
+            var listOrder = orderRepository.getListOrderbyUserId(user.UserId);
+            return View("OrderResult",listOrder);
         }
     }
 }

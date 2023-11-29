@@ -26,6 +26,7 @@ namespace Final_DotNet
             builder.Services.AddScoped<IUserRoleRepository, UserRoleService>();
             builder.Services.AddScoped<IOrderRepository, OrderService>();
             builder.Services.AddScoped<IReviewRepository, ReviewService>();
+            builder.Services.AddScoped<IRoleRepository, RoleService>();
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddScoped<AuthService>();

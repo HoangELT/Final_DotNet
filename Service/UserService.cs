@@ -25,7 +25,7 @@ namespace Final_DotNet.Service
 
         public List<User> GetAllUser()
         {
-            listusers = dbContext.Users.Include(p=>p.Orders).ToList();
+            listusers = dbContext.Users.Include(p=>p.Orders).Include(p=>p.Roles).ToList();
             return listusers;
         }
 

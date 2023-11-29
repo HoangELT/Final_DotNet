@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Admin";
     Layout = "~/Views/Shared/Layout_Admin/_Layout_Admin.cshtml";
+    var listRole = ViewBag.AllRole as List<Role>;
 }
 @model List<User>
 <div class="container-fluid">
@@ -22,6 +23,7 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-10 ps-2">Gender</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-10 ps-2">Phone Number</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-10 ps-2">Address</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-10 ps-2">Role</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Total Orders</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Date Create</th>
                                 </tr>
@@ -46,9 +48,31 @@
                                     <td>
                                         <p class="text-xs font-weight-bold mb-0">@i.PhoneNumber</p>
                                     </td>
-                                        <td>
-                                            <p class="text-xs font-weight-bold mb-0">@i.Address</p>
-                                        </td>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0">@i.Address</p>
+                                    </td>
+                                    <td>
+                                            @if(listRole != null && listRole.Count > 0)
+                                            {
+                                                <select class="role-dropdown" required>
+                                                    @foreach (var j in listRole)
+                                                    {
+                                                        foreach (var k in i.Roles)
+                                                        {
+                                                            if (j.RoleId == k.RoleId)
+                                                            {
+                                                                <option value="@j.RoleId" selected>@j.Name</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@j.RoleId">@j.Name</option>
+                                                            }
+                                                        }
+                                                    }
+                                                </select>
+                                                <input type="hidden" class="user-id" value="@i.UserId">
+                                            }
+                                    </td>
                                     <td class="align-middle text-center text-sm">@i.Orders.Count()</td>
                                     <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">@Convert.ToDateTime(i.DateCreate).ToString("dd/MM/yyyy") </span>
@@ -63,4 +87,34 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        // Lắng nghe sự kiện khi giá trị được chọn trong dropdown thay đổi
+        $('.role-dropdown').change(function () {
+            // Lấy giá trị đã chọn
+            var selectedRoleId = $(this).val();
+            console.log('Giá trị đã chọn trong dropdown:', selectedRoleId);
+
+            // Lấy giá trị user_id từ input hidden trong cùng dòng
+            var userId = $(this).closest('tr').find('.user-id').val();
+            console.log('Giá trị user id:', userId);
+            // Gửi yêu cầu cập nhật đến server sử dụng AJAX
+            $.ajax({
+                type: 'POST',
+                url: '/Admin/updateRoleUser',
+                data: { roleid: selectedRoleId, userid: userId },
+                success: function () {
+                    alertify.set('notifier', 'position', 'top-right');
+                    alertify.success("Update role user success");
+                    console.log('Đã cập nhật vai trò thành công');
+                },
+                error: function () {
+                    console.error('Lỗi khi cố gắng cập nhật vai trò');
+                }
+            });
+        });
+    });
+</script>
+
+
 

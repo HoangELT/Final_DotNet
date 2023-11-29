@@ -22,23 +22,5 @@ namespace Final_DotNet.Data
         {
 
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<UserRole>().HasKey(r => new { r.RoleId, r.UserId });
-
-            //modelBuilder.Entity<OrderDetail>().HasOne(x => x.Product)
-            //                                  .WithMany(x => x.Orders)
-            //                                  .HasForeignKey(x => x.ProductId);
-            //modelBuilder.Entity<OrderDetail>().HasOne(x => x.Order)
-            //                                  .WithMany(x => x.Products)
-            //                                  .HasForeignKey(x => x.OrderId);
-
-            //modelBuilder.Entity<Product>().HasOne(x => x.Category)
-            //                              .WithMany(x => x.Products)
-            //                              .HasForeignKey(p => p.CategoryId)
-            //                              .OnDelete(DeleteBehavior.Cascade);
-        }
     }
 }

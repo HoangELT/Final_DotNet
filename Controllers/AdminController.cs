@@ -19,9 +19,10 @@ namespace Final_DotNet.Controllers
         private readonly IBrandRepository brandRepository;
         private readonly IColorRepository colorRepository;
         private readonly IOrderRepository orderRepository;
+        private readonly IRoleRepository roleRepository;
         private readonly IWebHostEnvironment webHostEnvironment;
         private readonly ILogger<AdminController> logger;
-        public AdminController(IUserRoleRepository userroleRepo,IWebHostEnvironment webHostEnvironment,ILogger<AdminController> logger, IOrderRepository orderRepository, IProductColorRepository productColorRepository, IUserRepository userRepository, ICategoryRepository categoryRepository, IProductRepository productRepository, IColorRepository colorRepository, IBrandRepository brandRepository)
+        public AdminController(IRoleRepository roleRepository,IUserRoleRepository userroleRepo,IWebHostEnvironment webHostEnvironment,ILogger<AdminController> logger, IOrderRepository orderRepository, IProductColorRepository productColorRepository, IUserRepository userRepository, ICategoryRepository categoryRepository, IProductRepository productRepository, IColorRepository colorRepository, IBrandRepository brandRepository)
         {
             this.userRepository = userRepository;
             this.categoryRepository = categoryRepository;
@@ -33,6 +34,7 @@ namespace Final_DotNet.Controllers
             this.webHostEnvironment= webHostEnvironment;
             this.orderRepository = orderRepository;
             this.userroleRepo = userroleRepo;
+            this.roleRepository = roleRepository;
         }
         public IActionResult Index()
         {
@@ -45,7 +47,14 @@ namespace Final_DotNet.Controllers
         // --------------User---------------------
         public IActionResult AllUser()
         {
+            ViewBag.AllRole = roleRepository.getAllRoles();
             return View(userRepository.GetAllUser());
+        }
+        [HttpPost]
+        public IActionResult updateRoleUser(int roleid, int userid)
+        {
+            userroleRepo.updateRoleUser(userid,roleid);
+            return RedirectToAction("AllUser");
         }
         // --------------Product---------------------
         public IActionResult AllProducts()
@@ -131,6 +140,12 @@ namespace Final_DotNet.Controllers
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     image.CopyTo(stream);
+                }
+                string oldImagePath = Path.Combine(webHostEnvironment.WebRootPath, "templates", "img", "imgProduct", form["old_image"]);
+
+                if (System.IO.File.Exists(oldImagePath))
+                {
+                    System.IO.File.Delete(oldImagePath);
                 }
             }
             else { newProduct.ImageUrl = form["old_image"]; }

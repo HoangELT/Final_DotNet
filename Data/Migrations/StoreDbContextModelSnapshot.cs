@@ -321,13 +321,21 @@ namespace Final_DotNet.Migrations
 
             modelBuilder.Entity("Final_DotNet.Models.UserRole", b =>
                 {
+                    b.Property<int>("UserRoleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserRoleId"));
+
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("RoleId", "UserId");
+                    b.HasKey("UserRoleId");
+
+                    b.HasIndex("RoleId");
 
                     b.HasIndex("UserId");
 

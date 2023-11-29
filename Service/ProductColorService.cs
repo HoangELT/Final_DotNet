@@ -30,6 +30,13 @@ namespace Final_DotNet.Service
             var list = dbContext.ProductColors.Where(p=> p.ColorId==colorId).Select(p=>p.product).ToList();
             return list;
         }
+        public List<Product> FilterColorProduct(int colorId)
+        {
+            var list = dbContext.Products
+                .Where(p => p.Colors.Any(pc => pc.ColorId == colorId))
+                .ToList();
+            return list;
+        }
 
         //lay list color tu productcolor theo product id
         public List<Color> GetProductColor(int productId)

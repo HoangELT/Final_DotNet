@@ -31,13 +31,23 @@ namespace Final_DotNet.Controllers
             this.orderRepository= orderRepository;
             this.db = db;
         }
-        // trả về product detail
-        public ActionResult ProductDetail(int productId)
+        public void listProductActionBottom()
         {
             var Listproduct = productRepository.GetAllProduct();
             ViewBag.listAllproduct = Listproduct;
+            List<Color> colorOfproduct = new List<Color>();
+            var listpro = productRepository.GetAllProduct();
+            foreach (var product in listpro)
+            {
+                colorOfproduct.Add(productcolorRepository.GetProductColor(product.ProductId).FirstOrDefault());
+            }
+            ViewBag.colorOfProduct = colorOfproduct;
+        }
+        // trả về product detail
+        public ActionResult ProductDetail(int productId)
+        {
+            listProductActionBottom();
             ViewBag.listcolor = productcolorRepository.GetProductColor(productId);
-
             var allreview = revewRepository.getAllReviewbyproductId(productId);
             var totalreview = revewRepository.totalReview(productId);
             var totalproductrating = revewRepository.totalProductRating(productId);
@@ -144,7 +154,7 @@ namespace Final_DotNet.Controllers
             if (filter.Colors != null && filter.Colors.Count > 0 && !filter.Colors.Contains("all")){
                 foreach (var range in filter.Colors)
                 {
-                    var listpro = productcolorRepository.GetProductbyColorId(Int32.Parse(range));
+                    var listpro = productcolorRepository.FilterColorProduct(Int32.Parse(range));
                     filterlistproducts = listpro;
                 }
             }
