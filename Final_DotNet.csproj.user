@@ -5,6 +5,6 @@
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
     <View_SelectedScaffolderID>RazorViewEmptyScaffolder</View_SelectedScaffolderID>
     <View_SelectedScaffolderCategoryPath>root/Common/MVC/View</View_SelectedScaffolderCategoryPath>
-    <NameOfLastUsedPublishProfile>G:\DotNet_BT\Final_DotNet\Final_DotNet\Properties\PublishProfiles\hoangelt-001-site1 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>G:\DotNet_BT\Final_DotNet\Final_DotNet\Properties\PublishProfiles\hoangelt-001-site1 - FTP.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
